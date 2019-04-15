@@ -5,3 +5,15 @@ body{
   font-size:14px;
   color:#444;
 }
+
+.map{
+  height:500px;
+  width:500px;
+  border: 1px solid black;
+}
+
+.ball{
+  height: 5px;
+  width: 5px;
+  background-color: red;
+}
