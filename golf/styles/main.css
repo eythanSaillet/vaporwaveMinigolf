@@ -7,13 +7,24 @@ body{
 }
 
 .map{
-  height:500px;
-  width:500px;
+  height:600px;
+  width:300px;
   border: 1px solid black;
+  position: relative;
 }
 
-.ball{
+#ball{
   height: 5px;
   width: 5px;
   background-color: red;
+  position: absolute;
+}
+
+.cursor{
+  height: 120px;
+  width: 5px;
+  top: -57px;
+  position: absolute;
+  transform: rotate(180deg);
+  background-image: url("../images/cursor.png")
 }
