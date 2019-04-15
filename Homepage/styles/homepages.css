@@ -2,7 +2,7 @@ body{
   padding:0;
   font-family: 'Futura';
   font-size:14px;
-  color:#444;
+  color:#01CDFE;
   background: black;
   margin:0;
 }
@@ -21,16 +21,17 @@ h1{
   text-align: center;
 }
 
-p{
-  color:#01CDFE;
+h2{
+  font-size: 30px;
 }
 
 .firstLook{
   height: 595px;
+  flex-direction: row;
 }
 
 .video{
   background: white;
-  width: 414px;
-  height: 595px;
+  width: 50%;
+  height: 500px;
 } 
