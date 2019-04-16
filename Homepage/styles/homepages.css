@@ -1,16 +1,20 @@
 body{
   padding:0;
-  font-family: 'Futura';
+  font-family: 'VCR OSD Mono';
   font-size:14px;
   color:#01CDFE;
-  background: black;
-  margin:0;
+  background-image:url(../images/backgroundDark.jpg);
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin:0 auto;
+  text-align: center;
 }
 
 .container{
   margin:0 auto;
   width: 1024px;
-  display: flex;
 }
 
 h1{
@@ -18,20 +22,98 @@ h1{
   font-size: 130px;
   font-weight: 200;
   color: #ff71ce;
-  text-align: center;
+  margin-top: 10px;
 }
 
 h2{
-  font-size: 30px;
+  font-size: 45px;
+}
+
+p{
+  font-size: 25px;
 }
 
 .firstLook{
-  height: 595px;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   flex-direction: row;
+  background-color: rgba(0, 0, 0, 0)
 }
 
 .video{
-  background: white;
+  
   width: 50%;
   height: 500px;
+  margin-right: 10px;
 } 
+
+.video img{
+  height: 100%;
+}
+
+a{
+  font-size: 45px;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.text{
+  flex-direction: column;
+  width: 50%;
+  margin-left: 10px;
+}
+
+.text p{
+  color: orange;
+}
+
+.playButton{
+  flex-direction: column;
+  font-family: 'SF Alien encounters';
+  color: #01CDFE;
+}
+
+.screenshots{
+  flex-direction: row;
+  margin-top: 90px;
+  justify-content: space-around;
+}
+
+.screenshots img{
+  width: 20%;
+  height: 100%;
+  background-color: white;
+  justify-content: space-around;
+}
+
+.learnMore p{
+  color: orange;
+}
+
+.bigButton{
+  justify-content: flex-end;
+  border-color: #01CDFE;
+  margin-top: 90px;
+}
+ .bigButton a{
+   font-family: 'SF Alien encounters';
+   font-size: 60px;
+ }
+
+ footer{
+   background-color: black;
+   margin-top: 90px;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+ }
+
+ footer a{
+   font-size: 16px;
+   line-height: 30px;
+ }
