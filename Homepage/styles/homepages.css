@@ -1,0 +1,37 @@
+body{
+  padding:0;
+  font-family: 'Futura';
+  font-size:14px;
+  color:#01CDFE;
+  background: black;
+  margin:0;
+}
+
+.container{
+  margin:0 auto;
+  width: 1024px;
+  display: flex;
+}
+
+h1{
+  font-family: 'Streamster';
+  font-size: 130px;
+  font-weight: 200;
+  color: #ff71ce;
+  text-align: center;
+}
+
+h2{
+  font-size: 30px;
+}
+
+.firstLook{
+  height: 595px;
+  flex-direction: row;
+}
+
+.video{
+  background: white;
+  width: 50%;
+  height: 500px;
+} 
