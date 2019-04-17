@@ -382,8 +382,24 @@ color: rgb(202,101,245)
   border-color: white;
   background-color: rgba(0, 0, 0, 0.6);
   display:flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+  position: relative;
+}
+
+.section_gamePlay_winner_historical_option_song{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.section_gamePlay_winner_historical_option_song img{
+
+  width: auto;
+  height: 100%;
 }
 
 /*
