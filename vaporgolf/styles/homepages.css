@@ -1,3 +1,7 @@
+html body{
+  overflow: hidden;
+}
+
 body{
   padding: 0;
   font-family: 'VCR OSD Mono';
@@ -148,7 +152,7 @@ a:hover{
 
 .bigButton a:hover{
   text-shadow: #01CDFE 0 -3px;
-}  
+}
 
 /* Footer*/
 
