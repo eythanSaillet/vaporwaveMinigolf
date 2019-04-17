@@ -3,6 +3,9 @@ let mapVisual = document.querySelector(".game_map")
 let cursorVisual = document.querySelector(".game_cursor")
 let barrierVisual = document.querySelector(".game_barrier")
 
+let level1 = document.querySelector(".level1")
+let level2 = document.querySelector(".level2")
+
 let onePlayer = document.querySelector(".playerOne")
 let twoPlayer = document.querySelector(".playerTwo")
 let threePlayer = document.querySelector(".playerThree")
@@ -47,6 +50,7 @@ let levelA = {
       blowUp()
     }
   },
+
 
 }
 
@@ -276,6 +280,9 @@ function nextPlayer(){
 
   if(currentlyPlayerNumber>playerNumber){
     currentlyPlayerNumber -= playerNumber
+    console.log("test")
+    level +=1
+    nextLevel()
   }
 
   currentlyPlayer = playerTab[currentlyPlayerNumber-1]
@@ -333,4 +340,11 @@ function blowUp(){
     }
     ,125
   )
+}
+
+function nextLevel(){
+
+  if (level == 2) {
+    level1.style.display
+  }
 }
