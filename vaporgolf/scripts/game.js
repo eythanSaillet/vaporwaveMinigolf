@@ -1,7 +1,18 @@
-let ballVisual = document.querySelector("#game_ball")
-let mapVisual = document.querySelector(".game_map")
-let cursorVisual = document.querySelector(".game_cursor")
-let barrierVisual = document.querySelector(".game_barrier")
+// const ballVisual = document.querySelector("#game_ball")
+// const cursorVisual = document.querySelector(".game_cursor")
+const mapVisual = document.querySelectorAll(".game_map")
+const mapVisualA = document.querySelector(".level1")
+const mapVisualB = document.querySelector(".level2")
+
+// Selection des p des scores
+const pScore1 = document.querySelector("div.color1 p")
+const pScore2 = document.querySelector("div.color2 p")
+const pScore3 = document.querySelector("div.color3 p")
+const pScore4 = document.querySelector("div.color4 p")
+const pScore5 = document.querySelector("div.color5 p")
+const pScore6 = document.querySelector("div.color6 p")
+
+const barrierVisual = document.querySelector(".game_barrier")
 
 let level1 = document.querySelector(".level1")
 let level2 = document.querySelector(".level2")
@@ -75,6 +86,15 @@ let playerTab = []
 let currentlyPlayerNumber = 1
 let currentlyPlayer = ""
 
+// Création de la ball et du Curseur
+
+const ballVisual = document.createElement("div")
+const  cursorVisual = document.createElement("div")
+cursorVisual.classList.add("game_cursor")
+ballVisual.setAttribute("id", "game_ball");
+ballVisual.appendChild(cursorVisual)
+mapVisualA.appendChild(ballVisual)
+
 // Définition nombre de joueurs
 
 onePlayer.addEventListener('click', function(){
@@ -115,16 +135,25 @@ function playerTabCreation(){
   console.log(playerTab)
 }
 
+// Fonction refresh scores
+
+function refreshScore(){
+  pScore1.innerHTML = score[0]
+  pScore2.innerHTML = score[1]
+  pScore3.innerHTML = score[2]
+  pScore4.innerHTML = score[3]
+  pScore5.innerHTML = score[4]
+  pScore6.innerHTML = score[5]
+
+}
+
 // Position de base de la balle
 
 ballVisual.style.left = ball.posX+"px"
 ballVisual.style.bottom = ball.posY+"px"
-// ball.style.transform = "translateX("+posX+"px)" + " translateY("+posY+"px)"
-
 
 // EVENT Click / Entrer --> Lancer la balle
 
-mapVisual.addEventListener("click", play)
 
 window.addEventListener('keydown', (e) => {
       if(e.code == "Enter"){
@@ -132,6 +161,10 @@ window.addEventListener('keydown', (e) => {
       }
     }
   )
+
+mapVisual.forEach(function(e){
+  e.addEventListener('click', play)
+})
 
 
 // Clignotement barrière rouge
@@ -266,12 +299,13 @@ function resetBall(){
 function win(){
   console.log("Le joueur "+currentlyPlayerNumber+" a fait "+bounce+" rebond(s).")
 
-  score[currentlyPlayerNumber] += bounce
+  score[currentlyPlayerNumber-1] += bounce
 
   bounce = 0
   currentlyPlayerNumber += 1
   resetBall()
   nextPlayer()
+  refreshScore()
 }
 
 // Tour par Tour
@@ -344,6 +378,8 @@ function nextLevel(){
     setTimeout(function(){
       level1.style.display = "none"
       level2.style.display = "block"
+      mapVisualA.removeChild(ballVisual)
+      mapVisualB.appendChild(ballVisual)
     }
   ,300)
   }
