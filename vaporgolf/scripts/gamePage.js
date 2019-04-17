@@ -1,8 +1,9 @@
 let music = new Audio ('sounds/music.mp3');
 
-music.play();
-music.volume= 0.15;
-
+setTimeout(() => {
+  music.play();
+  music.volume=0.15;
+},500)
 
 let playerSelector = document.querySelectorAll(".section_numberPlayer_player")
 let numberPlayerMenu = document.querySelector(".section_numberPlayer")
