@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;fill:#F70FCE;stroke:#3EDFFE;stroke-width:18;stroke-miterlimit:10;}
+	.st2{display:inline;fill:none;stroke:#3EDFFE;stroke-width:18;stroke-miterlimit:10;}
+	.st3{display:inline;fill:none;}
+	.st4{display:inline;fill:#3EDFFE;stroke:#F70FCE;stroke-width:18;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#3EDFFE;stroke-width:32;stroke-miterlimit:10;}
+	.st6{fill:#F70FCE;stroke:#3EDFFE;stroke-width:31;stroke-miterlimit:10;}
+	.st7{fill:none;}
+	.st8{fill:#F70FCE;}
+	.st9{font-family:'NewsGothicMT-Bold';}
+	.st10{font-size:74px;}
+</style>
+<g id="Calque_1" class="st0">
+	<polygon class="st1" points="231,400.5 142.5,312 90.5,312.5 90.5,258.5 142.5,258.5 231,170 	"/>
+	<path class="st2" d="M255,217c0,0,66-7.26,66,62c0,70-66,67-66,67"/>
+	<path class="st2" d="M255,182.34c0,0,110-11.17,110,95.37c0,107.68-110,103.06-110,103.06"/>
+	<path class="st3" d="M250,89"/>
+	<line class="st4" x1="76" y1="124" x2="418" y2="466"/>
+	<line class="st4" x1="407" y1="120" x2="65" y2="462"/>
+</g>
+<g id="Calque_2">
+	<path class="st5" d="M207.95,91.94C131.12,112.96,75,179.35,75,258c0,95.55,82.83,173,185,173s185-77.45,185-173
+		c0-55-36-130-96-147"/>
+	<polygon class="st6" points="262.5,93.2 320.79,192.31 356.03,63.92 	"/>
+	<rect x="111.75" y="240.25" class="st7" width="297.25" height="76.07"/>
+	<text transform="matrix(1 0 0 1 139.8164 296.4121)" class="st8 st9 st10">RESET</text>
+</g>
+</svg>

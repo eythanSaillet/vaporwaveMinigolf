@@ -11,8 +11,25 @@ let pageGamePlayScoreButton = document.querySelector(".section_gamePlay_winnerNa
 let pageGamePlayScoreRejouer = document.querySelector(".section_gamePlay_finalScore_score_rejouer")
 let gamePlayOptionSongOn= document.querySelector(".section_gamePlay_winner_historical_option_song")
 let gamePlayOptionSongOff= document.querySelector(".section_gamePlay_winner_historical_option_songOff")
+let gamePlayOptionResart = document.querySelector(".section_gamePlay_winner_historical_option_restart_img")
+let gamefinalScoreButton = document.querySelector(".section_gamePlay_finalScore_score_rejouer")
+
 
 console.log(pageNumberPlayerbutton)
+
+gamePlayOptionResart.addEventListener(
+  "click",
+  function(){
+    document.location.reload(true)
+  }
+)
+
+gamefinalScoreButton.addEventListener(
+  "click",
+  function(){
+    document.location.reload(true)
+  }
+)
 
 
 gamePlayOptionSongOn.addEventListener(
