@@ -10,6 +10,8 @@ let fourPlayer = document.querySelector(".playerFour")
 let fivePlayer = document.querySelector(".playerFive")
 let sixPlayer = document.querySelector(".playerSix")
 
+console.log(fourPlayer)
+
 let move
 
 let ball = {
@@ -68,13 +70,8 @@ let playerColor = ["","#FF1493","#00FF00","#FFFF00","#9400D3","#FFFFFF","#FFA500
 let playerNumber = 6
 let playerTab = []
 
-let currentlyPlayerNumber = 1
+let currentlyPlayerNumber
 let currentlyPlayer = ""
-
-for (var i = 0; i < playerNumber; i++) {
-  let tempI = i+1
-  playerTab.push("player"+tempI)
-}
 
 // Définition nombre de joueurs
 
@@ -101,6 +98,11 @@ fivePlayer.addEventListener('click', function(){
 sixPlayer.addEventListener('click', function(){
   playerNumber = 6
 })
+
+for (var i = 0; i < playerNumber; i++) {
+  let tempI = i+1
+  playerTab.push("player"+tempI)
+}
 
 console.log(playerTab)
 
