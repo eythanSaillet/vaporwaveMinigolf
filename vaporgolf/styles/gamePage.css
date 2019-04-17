@@ -82,6 +82,10 @@ SECTION NUMBER OF PLAYER
   font-weight: 200;
 }
 
+.button:hover{
+  text-shadow: #01CDFE 0 -3px;
+}
+
 .section_numberPlayer_header_intruction{
   padding: 10px;
   background: rgba(0,0,0,0.8);
@@ -123,6 +127,29 @@ SECTION NUMBER OF PLAYER
 /*
 NUMBER OF PLAYER
 */
+.playerOne:hover{
+  text-shadow: #FF0000 0 -3px;
+}
+
+.playerTwo:hover{
+  text-shadow: #00D7EE 0 -3px;
+}
+
+.playerThree:hover{
+  text-shadow: #FF1493 0 -3px;
+}
+
+.playerFour:hover{
+  text-shadow: #FFFF00 0 -3px;
+}
+
+.playerFive:hover{
+  text-shadow: #9400D3 0 -3px;
+}
+
+.playerSix:hover{
+  text-shadow: #00FF00 0 -3px;
+}
 
 .section_numberPlayer{
   visibility: hidden;
@@ -554,6 +581,10 @@ FINAL SCORE
   border-style :solid;
   border-color: white;
   margin-top: 20px;
+}
+
+.section_gamePlay_finalScore_score_rejouer h1:hover{
+  text-shadow: #01CDFE 0 -3px;
 }
 
 .Score_players_1{
