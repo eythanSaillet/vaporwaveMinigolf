@@ -1,34 +1,59 @@
-let ball = document.querySelector("#game_ball")
-let map = document.querySelector(".game_map")
-let cursor = document.querySelector(".game_cursor")
-let barrier = document.querySelector(".game_barrier")
+let ballVisual = document.querySelector("#game_ball")
+let mapVisual = document.querySelector(".game_map")
+let cursorVisual = document.querySelector(".game_cursor")
+let barrierVisual = document.querySelector(".game_barrier")
+let move
 
-// SON
+let ball = {
+  posX : 150,
+  posY : 70,
 
-// let bounceSound = new Audio('sounds/bounce.mp3');
-// bounceSound.play();
+  dirX : 0,
+  dirY : 10,
+  step : 10,
+  timer : 25,
+}
 
-let timer = 25
-let step = 10
+let levelA = {
+  posXInit : 150,
+  posYInit : 70,
+
+  win : function(){
+
+    if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
+      console.log("win")
+      window.clearInterval(move)
+      win()
+      setTimeout(
+        function(){
+          ballVisual.style.display = "none"
+        }
+        ,50
+      )
+    }
+  },
+
+  blowUp : function(){
+    if (ball.posY<=0) {
+      window.clearInterval(move)
+      blowUp()
+    }
+  },
+
+}
+
+
 let bounce = 0
 let playProcess = false
-
-// Variables directions
-
-let posXInit = 150
-let posYInit = 70
-
-let posX = 150
-let posY = 70
-
-let dirX = 0
-let dirY = 10
-
 let cursorAngle = 0
+
+// Info level
+
+let level = 1
 
 // Variables infos joueurs
 
-let score1 = 0, score2 = 0, score3 = 0, score4 = 0, score5 = 0, score6 = 0
+let score = [0,0,0,0,0,0]
 let playerColor = ["","#FF1493","#00FF00","#FFFF00","#9400D3","#FFFFFF","#FFA500"]
 
 // Variables nombre de Joueurs
@@ -45,23 +70,21 @@ for (var i = 0; i < playerNumber; i++) {
 }
 
 console.log(playerTab)
-console.log(playerNumber)
 
 // Position de base de la balle
 
-ball.style.left = posX+"px"
-ball.style.bottom = posY+"px"
+ballVisual.style.left = ball.posX+"px"
+ballVisual.style.bottom = ball.posY+"px"
 // ball.style.transform = "translateX("+posX+"px)" + " translateY("+posY+"px)"
 
 
 // EVENT Click / Entrer --> Lancer la balle
 
-map.addEventListener("click", ()=>{play()})
+mapVisual.addEventListener("click", play)
 
 window.addEventListener('keydown', (e) => {
       if(e.code == "Enter"){
         play()
-        console.log('done')
       }
     }
   )
@@ -70,9 +93,9 @@ window.addEventListener('keydown', (e) => {
 // Clignotement barrière rouge
 
 setInterval(function(){
-  barrier.style.boxShadow = "0px 0px 40px 0px red"
+  barrierVisual.style.boxShadow = "0px 0px 40px 0px red"
   setTimeout(function(){
-    barrier.style.boxShadow = "0px 0px 40px 10px red"
+    barrierVisual.style.boxShadow = "0px 0px 40px 10px red"
   }
   ,250
 )
@@ -84,58 +107,48 @@ setInterval(function(){
 
 function play(){
   if (playProcess == false) {
-    let move = setInterval(
+    move = setInterval(
       function(){
+
+        ball.posX += ball.dirX
+        ball.posY += ball.dirY
+
+        playProcess = true
+
+        // Rebonds bordures
+
+        if(ball.posX>=300 || ball.posX<=-10){
+          ball.dirX=-ball.dirX
+          bounce +=1
+          console.log(bounce)
+        }
+        if(ball.posY>=600 || ball.posY<=0){
+          ball.dirY=-ball.dirY
+          bounce +=1
+          console.log(bounce)
+        }
 
         requestAnimationFrame(function() {
 
-          posX = posX + dirX
-          posY = posY + dirY
+          // Actualisation du visuel de la ball
 
-          playProcess = true
+          ballVisual.style.left = ball.posX+"px"
+          ballVisual.style.bottom = ball.posY+"px"
 
-          if(posX>=300 || posX<=-10){
-            dirX=-dirX
-            bounce +=1
-            console.log(bounce)
-          }
-          if(posY>=600 || posY<=0){
-            dirY=-dirY
-            bounce +=1
-            console.log(bounce)
-          }
-
-
-          // Test Win
-
-          if(posY>476 && posY<503 && posX>137 && posX<163){
-            console.log("win")
-            window.clearInterval(move)
-            win()
-            setTimeout(
-              function(){
-                ball.style.display = "none"
-              }
-              ,50
-            )
-          }
-
-          ball.style.left = posX+"px"
-          ball.style.bottom = posY+"px"
-
-          cursor.style.display = "none"
-
-          // Test blowUp
-
-          if (posY<=0) {
-            window.clearInterval(move)
-            blowUp()
-          }
+          cursorVisual.style.display = "none"
 
         })
 
+        // Test Win
+
+        levelA.win()
+
+        // Test blowUp
+
+        levelA.blowUp()
+
       }
-      ,timer)
+      ,ball.timer)
   }
 }
 
@@ -154,15 +167,15 @@ let toRadian = function (deg) {
 window.addEventListener('keydown', (e) => {
   if(e.code == "ArrowLeft" && playProcess == false){
     cursorAngle = cursorAngle-5
-    cursor.style.transform = "rotate("+cursorAngle+"deg)"
-    dirX=Math.round(Math.sin(toRadian(cursorAngle))*step)
-    dirY=Math.round(Math.cos(toRadian(cursorAngle))*step)
+    cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
+    ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
+    ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
   }
   if(e.code == "ArrowRight" && playProcess == false){
     cursorAngle = cursorAngle+5
-    cursor.style.transform = "rotate("+cursorAngle+"deg)"
-    dirX=Math.round(Math.sin(toRadian(cursorAngle))*step)
-    dirY=Math.round(Math.cos(toRadian(cursorAngle))*step)
+    cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
+    ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
+    ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
   }
 })
 
@@ -177,21 +190,27 @@ function resetBall(){
 
       // ball
 
-      posX = posXInit
-      posY = posYInit
+      ball.posX = levelA.posXInit
+      ball.posY = levelA.posYInit
 
-      ball.style.left = posXInit+"px"
-      ball.style.bottom = posYInit+"px"
-      ball.style.display = "block"
+      ballVisual.style.left = levelA.posXInit+"px"
+      ballVisual.style.bottom = levelA.posYInit+"px"
+      ballVisual.style.display = "block"
+
+      // ball level 3
+
+      if(level==3){
+        console.log("level3")
+      }
 
 
       // Curseur
 
       cursorAngle = 0
-      dirX = 0
-      dirY = 10
-      cursor.style.display = "block"
-      cursor.style.transform = "rotate("+cursorAngle+"deg)"
+      ball.dirX = 0
+      ball.dirY = 10
+      cursorVisual.style.display = "block"
+      cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
 
     }
     ,500
@@ -203,35 +222,8 @@ function resetBall(){
 function win(){
   console.log("Le joueur "+currentlyPlayerNumber+" a fait "+bounce+" rebond(s).")
 
-  if (currentlyPlayerNumber == 1) {
-    score1 += bounce
-    console.log("Son score est maintenant de "+score1)
-  }
+  score[currentlyPlayerNumber] += bounce
 
-  if (currentlyPlayerNumber == 2) {
-    score2 += bounce
-    console.log("Son score est maintenant de "+score2)
-  }
-
-  if (currentlyPlayerNumber == 3) {
-    score3 += bounce
-    console.log("Son score est maintenant de "+score3)
-  }
-
-  if (currentlyPlayerNumber == 4) {
-    score4 += bounce
-    console.log("Son score est maintenant de "+score4)
-  }
-
-  if (currentlyPlayerNumber == 5) {
-    score5 += bounce
-    console.log("Son score est maintenant de "+score5)
-  }
-
-  if (currentlyPlayerNumber == 6) {
-    score6 += bounce
-    console.log("Son score est maintenant de "+score6)
-  }
   bounce = 0
   currentlyPlayerNumber += 1
   resetBall()
@@ -249,8 +241,8 @@ function nextPlayer(){
   currentlyPlayer = playerTab[currentlyPlayerNumber-1]
   console.log(currentlyPlayer)
 
-  ball.style.backgroundColor= playerColor[currentlyPlayerNumber]
-  ball.style.boxShadow = "0px 0px 40px 10px " + playerColor[currentlyPlayerNumber]
+  ballVisual.style.backgroundColor= playerColor[currentlyPlayerNumber]
+  ballVisual.style.boxShadow = "0px 0px 40px 10px " + playerColor[currentlyPlayerNumber]
 
 }
 
@@ -263,7 +255,7 @@ function blowUp(){
 
   // Animation
 
-  ball.style.boxShadow = "0px 0px 1000px 100px" + playerColor[currentlyPlayerNumber]
+  ballVisual.style.boxShadow = "0px 0px 1000px 100px" + playerColor[currentlyPlayerNumber]
   console.log("blow")
 
   // Reset position
@@ -272,26 +264,33 @@ function blowUp(){
 
     playProcess = false
 
+    playProcess = false
+
     // ball
 
-    posX = posXInit
-    posY = posYInit
+    ball.posX = levelA.posXInit
+    ball.posY = levelA.posYInit
 
-    ball.style.left = posXInit+"px"
-    ball.style.bottom = posYInit+"px"
-    ball.style.display = "block"
+    ballVisual.style.left = levelA.posXInit+"px"
+    ballVisual.style.bottom = levelA.posYInit+"px"
+    ballVisual.style.display = "block"
 
+    // ball
+
+    if(level == 3){
+      console.log("level3")
+    }
 
       // Curseur
 
     cursorAngle = 0
-    dirX = 0
-    dirY = 10
-    cursor.style.display = "block"
-    cursor.style.transform = "rotate("+cursorAngle+"deg)"
-    ball.style.boxShadow = "0px 0px 100px 20px" + playerColor[currentlyPlayerNumber]
+    ball.dirX = 0
+    ball.dirY = 10
+    cursorVisual.style.display = "block"
+    cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
+    ballVisual.style.boxShadow = "0px 0px 100px 20px" + playerColor[currentlyPlayerNumber]
 
     }
-    ,150
+    ,125
   )
 }
