@@ -7,7 +7,7 @@ body{
   background-color: black;
 }
 
-.map{
+.game_map{
   height:600px;
   width:300px;
   top:50px;
@@ -20,7 +20,7 @@ body{
   box-shadow: 0px 0px 40px 20px #0ff;
 }
 
-#ball{
+#game_ball{
   height: 10px;
   width: 10px;
   background-color: #FF1493;
@@ -30,7 +30,7 @@ body{
   box-shadow: 0px 0px 40px 10px #FF1493;
 }
 
-.cursor{
+.game_cursor{
   height: 120px;
   width: 5px;
   top: -57px;
@@ -41,7 +41,7 @@ body{
 
 }
 
-.hole{
+.game_hole{
   height: 20px;
   width: 20px;
   background-color: white;
@@ -51,7 +51,7 @@ body{
   border-radius: 20px;
 }
 
-.barrier{
+.game_barrier{
   height: 10px;
   width: 300px;
   background-color: red;

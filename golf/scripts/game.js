@@ -1,13 +1,22 @@
-let ball = document.querySelector("#ball")
-let map = document.querySelector(".map")
-let cursor = document.querySelector(".cursor")
-let barrier = document.querySelector(".barrier")
-let bounceSound = document.querySelector("#bounceSound")
+let ball = document.querySelector("#game_ball")
+let map = document.querySelector(".game_map")
+let cursor = document.querySelector(".game_cursor")
+let barrier = document.querySelector(".game_barrier")
+
+// SON
+
+// let bounceSound = new Audio('sounds/bounce.mp3');
+// bounceSound.play();
 
 let timer = 25
 let step = 10
 let bounce = 0
 let playProcess = false
+
+// Variables directions
+
+let posXInit = 150
+let posYInit = 70
 
 let posX = 150
 let posY = 70
@@ -17,12 +26,18 @@ let dirY = 10
 
 let cursorAngle = 0
 
-// Nombre de Joueurs
+// Variables infos joueurs
 
-let playerNumber = 3
+let score1 = 0, score2 = 0, score3 = 0, score4 = 0, score5 = 0, score6 = 0
+let playerColor = ["","#FF1493","#00FF00","#FFFF00","#FF00FF","#000000","#FFA500"]
+
+// Variables nombre de Joueurs
+
+let playerNumber = 4
 let playerTab = []
 
-let currentlyPlayer = 1
+let currentlyPlayerNumber = 1
+let currentlyPlayer = ""
 
 for (var i = 0; i < playerNumber; i++) {
   let tempI = i+1
@@ -41,11 +56,12 @@ ball.style.bottom = posY+"px"
 
 // EVENT Click / Entrer --> Lancer la balle
 
-map.addEventListener("click", play)
+map.addEventListener("click", ()=>{play()})
 
 window.addEventListener('keydown', (e) => {
       if(e.code == "Enter"){
         play()
+        console.log('done')
       }
     }
   )
@@ -89,15 +105,16 @@ function play(){
             console.log(bounce)
           }
 
+
           // Test Win
 
           if(posY>476 && posY<503 && posX>137 && posX<163){
             console.log("win")
-            playProcess = false
+            window.clearInterval(move)
+            win()
             setTimeout(
               function(){
                 ball.style.display = "none"
-                window.clearInterval(move)
               }
               ,50
             )
@@ -106,7 +123,16 @@ function play(){
           ball.style.left = posX+"px"
           ball.style.bottom = posY+"px"
 
-          cursor.style.display = "none"})
+          cursor.style.display = "none"
+
+          // Test blowUp
+
+          if (posY<=0) {
+            window.clearInterval(move)
+            blowUp()
+          }
+
+        })
 
       }
       ,timer)
@@ -126,13 +152,13 @@ let toRadian = function (deg) {
 // Curseur choix angle de lancement
 
 window.addEventListener('keydown', (e) => {
-  if(e.code == "ArrowLeft"){
+  if(e.code == "ArrowLeft" && playProcess == false){
     cursorAngle = cursorAngle-5
     cursor.style.transform = "rotate("+cursorAngle+"deg)"
     dirX=Math.round(Math.sin(toRadian(cursorAngle))*step)
     dirY=Math.round(Math.cos(toRadian(cursorAngle))*step)
   }
-  if(e.code == "ArrowRight"){
+  if(e.code == "ArrowRight" && playProcess == false){
     cursorAngle = cursorAngle+5
     cursor.style.transform = "rotate("+cursorAngle+"deg)"
     dirX=Math.round(Math.sin(toRadian(cursorAngle))*step)
@@ -140,8 +166,130 @@ window.addEventListener('keydown', (e) => {
   }
 })
 
+// Fonction reset ball
+
+function resetBall(){
+
+  setTimeout(
+    function(){
+
+      playProcess = false
+
+      // ball
+
+      posX = posXInit
+      posY = posYInit
+
+      ball.style.left = posXInit+"px"
+      ball.style.bottom = posYInit+"px"
+      ball.style.display = "block"
+
+
+      // Curseur
+
+      cursorAngle = 0
+      dirX = 0
+      dirY = 10
+      cursor.style.display = "block"
+      cursor.style.transform = "rotate("+cursorAngle+"deg)"
+
+    }
+    ,500
+  )
+}
+
+// Fonction WIN --> point
+
+function win(){
+  console.log(currentlyPlayerNumber)
+  if (currentlyPlayerNumber == 1) {
+    score1 += bounce
+  }
+
+  if (currentlyPlayerNumber == 2) {
+    score2 += bounce
+  }
+
+  if (currentlyPlayerNumber == 3) {
+    score3 += bounce
+  }
+
+  if (currentlyPlayerNumber == 4) {
+    score4 += bounce
+  }
+
+  if (currentlyPlayerNumber == 5) {
+    score5 += bounce
+  }
+
+  if (currentlyPlayerNumber == 6) {
+    score6 += bounce
+  }
+  console.log(bounce)
+  bounce = 0
+  currentlyPlayerNumber += 1
+  resetBall()
+  nextPlayer()
+}
+
 // Tour par Tour
 
-if (true) {
+function nextPlayer(){
 
+  if(currentlyPlayerNumber>playerNumber){
+    currentlyPlayerNumber -= playerNumber
+  }
+
+  currentlyPlayer = playerTab[currentlyPlayerNumber-1]
+  console.log(currentlyPlayer)
+
+  ball.style.backgroundColor= playerColor[currentlyPlayerNumber]
+  ball.style.boxShadow = "0px 0px 40px 10px " + playerColor[currentlyPlayerNumber]
+
+}
+
+nextPlayer()
+
+
+// Fonction explosion
+
+function blowUp(){
+
+  // Animation
+
+  console.log(currentlyPlayerNumber)
+  console.log(playerColor[currentlyPlayerNumber])
+
+
+  ball.style.boxShadow = "0px 0px 1000px 100px" + playerColor[currentlyPlayerNumber]
+  console.log("blow")
+
+  // Reset position
+
+  setTimeout(function(){
+
+    playProcess = false
+
+    // ball
+
+    posX = posXInit
+    posY = posYInit
+
+    ball.style.left = posXInit+"px"
+    ball.style.bottom = posYInit+"px"
+    ball.style.display = "block"
+
+
+      // Curseur
+
+    cursorAngle = 0
+    dirX = 0
+    dirY = 10
+    cursor.style.display = "block"
+    cursor.style.transform = "rotate("+cursorAngle+"deg)"
+    ball.style.boxShadow = "0px 0px 100px 20px" + playerColor[currentlyPlayerNumber]
+
+    }
+    ,150
+  )
 }
