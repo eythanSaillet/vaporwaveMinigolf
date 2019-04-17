@@ -280,13 +280,12 @@ function nextPlayer(){
 
   if(currentlyPlayerNumber>playerNumber){
     currentlyPlayerNumber -= playerNumber
+    currentlyPlayer = playerTab[currentlyPlayerNumber-1]
+    console.log(currentlyPlayer)
     console.log("test")
     level +=1
     nextLevel()
   }
-
-  currentlyPlayer = playerTab[currentlyPlayerNumber-1]
-  console.log(currentlyPlayer)
 
   ballVisual.style.backgroundColor= playerColor[currentlyPlayerNumber]
   ballVisual.style.boxShadow = "0px 0px 40px 10px " + playerColor[currentlyPlayerNumber]
@@ -308,8 +307,6 @@ function blowUp(){
   // Reset position
 
   setTimeout(function(){
-
-    playProcess = false
 
     playProcess = false
 
@@ -345,6 +342,7 @@ function blowUp(){
 function nextLevel(){
 
   if (level == 2) {
-    level1.style.display
+    level1.style.display = "none"
+    level1.style.display = "block"
   }
 }
