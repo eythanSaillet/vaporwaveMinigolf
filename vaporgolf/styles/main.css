@@ -95,16 +95,6 @@ a:hover{
   margin-bottom: 90px;
 }
 
-.playButton{
-  flex-direction: column;
-  font-family: 'SF Alien encounters';
-  color: #01CDFE;
-}
-
-.playButton a:hover{
-  text-shadow: #ff71ce 0 -3px;
-}
-
 /* Screenshots of the game */
 
 .screenshots{
