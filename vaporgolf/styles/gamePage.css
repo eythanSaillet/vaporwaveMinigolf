@@ -373,7 +373,7 @@ color: rgb(202,101,245)
   height: 80%;
 }
 
-.section_gamePlay_winner_historical_sound{
+.section_gamePlay_winner_historical_option{
   width: 200px;
   height: 50px;
   margin: auto;
@@ -384,6 +384,12 @@ color: rgb(202,101,245)
   display:flex;
   justify-content: center;
   align-items: center;
+}
+
+.section_gamePlay_winner_historical_option_icon{
+  width: 50%;
+  height: 100%;
+  background-color: blue;
 }
 
 /*
