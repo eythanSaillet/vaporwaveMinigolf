@@ -10,8 +10,6 @@ let fourPlayer = document.querySelector(".playerFour")
 let fivePlayer = document.querySelector(".playerFive")
 let sixPlayer = document.querySelector(".playerSix")
 
-console.log(fourPlayer)
-
 let move
 
 let ball = {
@@ -67,44 +65,51 @@ let playerColor = ["","#FF1493","#00FF00","#FFFF00","#9400D3","#FFFFFF","#FFA500
 
 // Variables nombre de Joueurs
 
-let playerNumber = 6
+let playerNumber
 let playerTab = []
 
-let currentlyPlayerNumber
+let currentlyPlayerNumber = 1
 let currentlyPlayer = ""
 
 // Définition nombre de joueurs
 
 onePlayer.addEventListener('click', function(){
   playerNumber = 1
+  playerTabCreation()
 })
 
 twoPlayer.addEventListener('click', function(){
   playerNumber = 2
+  playerTabCreation()
 })
 
 threePlayer.addEventListener('click', function(){
   playerNumber = 3
+  playerTabCreation()
 })
 
 fourPlayer.addEventListener('click', function(){
   playerNumber = 4
+  playerTabCreation()
 })
 
 fivePlayer.addEventListener('click', function(){
   playerNumber = 5
+  playerTabCreation()
 })
 
 sixPlayer.addEventListener('click', function(){
   playerNumber = 6
+  playerTabCreation()
 })
 
-for (var i = 0; i < playerNumber; i++) {
-  let tempI = i+1
-  playerTab.push("player"+tempI)
+function playerTabCreation(){
+  for (var i = 0; i < playerNumber; i++) {
+    let tempI = i+1
+    playerTab.push("player"+tempI)
+  }
+  console.log(playerTab)
 }
-
-console.log(playerTab)
 
 // Position de base de la balle
 
