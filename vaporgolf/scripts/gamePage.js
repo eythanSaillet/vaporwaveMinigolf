@@ -49,7 +49,6 @@ playerSelector.forEach(
       function(){
         numberPlayerMenu.style.display="none"
         pageGamePlay.style.visibility="visible"
-        console.log('nn')
 
       }
     )

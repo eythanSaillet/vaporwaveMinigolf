@@ -382,8 +382,24 @@ color: rgb(202,101,245)
   border-color: white;
   background-color: rgba(0, 0, 0, 0.6);
   display:flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+  position: relative;
+}
+
+.section_gamePlay_winner_historical_option_song{
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.section_gamePlay_winner_historical_option_song img{
+
+  width: auto;
+  height: 100%;
 }
 
 /*
@@ -533,4 +549,34 @@ FINAL SCORE
   position: absolute;
   box-shadow: 0px 0px 40px 5px red;
   transition: all 250ms linear;
+}
+
+.level1{
+  display: block;
+}
+
+/* LEVEL 2 */
+
+.level2{
+  display: none;
+}
+
+.game_brick{
+  position: absolute;
+  background-color: #0ff;
+  bottom: -10px;
+  left: 120px;
+  top: 129px;
+  height: 30px;
+  width: 57px;
+}
+
+.game_brick2{
+  position: absolute;
+  background-color: #0ff;
+  bottom: -10px;
+  left: 171px;
+  top: 421px;
+  height: 30px;
+  width: 57px;
 }
