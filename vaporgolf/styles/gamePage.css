@@ -606,13 +606,13 @@ FINAL SCORE
 }
 
 .level1{
-  display: none;
+  display: block;
 }
 
 /* LEVEL 2 */
 
 .level2{
-  display: block;
+  display: none;
 }
 
 .game_brick{
