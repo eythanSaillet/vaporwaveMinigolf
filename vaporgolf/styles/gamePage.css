@@ -1,4 +1,6 @@
-
+html body{
+  overflow: hidden;
+}
 
 body{
   margin:0;
