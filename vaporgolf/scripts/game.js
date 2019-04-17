@@ -48,6 +48,7 @@ let levelA = {
     }
   },
 
+
 }
 
 let bounce = 0
@@ -276,6 +277,7 @@ function nextPlayer(){
 
   if(currentlyPlayerNumber>playerNumber){
     currentlyPlayerNumber -= playerNumber
+    nextLevel()
   }
 
   currentlyPlayer = playerTab[currentlyPlayerNumber-1]
@@ -333,4 +335,9 @@ function blowUp(){
     }
     ,125
   )
+}
+
+function nextLevel(){
+  level +=1
+  console.log(level)
 }
