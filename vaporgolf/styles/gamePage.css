@@ -373,7 +373,7 @@ color: rgb(202,101,245)
   height: 80%;
 }
 
-.section_gamePlay_winner_historical_sound{
+.section_gamePlay_winner_historical_option{
   width: 200px;
   height: 50px;
   margin: auto;
@@ -552,13 +552,13 @@ FINAL SCORE
 }
 
 .level1{
-  display: block;
+  display: none;
 }
 
 /* LEVEL 2 */
 
 .level2{
-  display: none;
+  display: block;
 }
 
 .game_brick{
