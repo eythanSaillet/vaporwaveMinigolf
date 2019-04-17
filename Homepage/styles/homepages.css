@@ -1,19 +1,21 @@
 body{
-  padding:0;
+  padding: 0;
   font-family: 'VCR OSD Mono';
-  font-size:14px;
-  color:#01CDFE;
-  background-image:url(../images/backgroundDark.jpg);
+  font-size: 14px;
+  color: #01CDFE;
+  background-image: url(../images/background2.jpg);
   background-size: 110%;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  margin:0 auto;
+  margin: 0 auto;
   text-align: center;
 }
 
+/* Main */
+
 .container{
-  margin:0 auto;
+  margin: 0 auto;
   width: 1024px;
 }
 
@@ -25,13 +27,7 @@ h1{
   margin-top: 10px;
 }
 
-h2{
-  font-size: 45px;
-}
-
-p{
-  font-size: 25px;
-}
+/* First Look */
 
 .firstLook{
   height: 500px;
@@ -42,12 +38,21 @@ p{
   background-color: rgba(0, 0, 0, 0)
 }
 
+h2{
+  font-size: 45px;
+  margin-top : 0px;
+}
+
+p{
+  font-size: 25px;
+}
+
 .video{
-  
+
   width: 50%;
   height: 500px;
   margin-right: 10px;
-} 
+}
 
 .video img{
   height: 100%;
@@ -56,6 +61,7 @@ p{
 a{
   font-size: 45px;
   text-decoration: none;
+  color: #01CDFE;
 }
 
 a:hover{
@@ -78,6 +84,8 @@ a:hover{
   color: #01CDFE;
 }
 
+/* Screenshots of the game */
+
 .screenshots{
   flex-direction: row;
   margin-top: 90px;
@@ -95,25 +103,49 @@ a:hover{
   color: orange;
 }
 
+/* Play Button */
+
 .bigButton{
-  justify-content: flex-end;
-  border-color: #01CDFE;
-  margin-top: 90px;
+  width: 200px;
+  height: 72px;
+  margin: auto;
+  border-style :solid;
+  border-color: white;
+  margin-bottom: 20px;
+
+
+
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items:center;
 }
- .bigButton a{
-   font-family: 'SF Alien encounters';
-   font-size: 60px;
- }
 
- footer{
-   background-color: black;
-   margin-top: 90px;
-   padding: 20px;
-   display: flex;
-   flex-direction: column;
- }
+.bigButton a{
+  font-family: 'SF Alien encounters';
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  color : white;
+  margin: 10px;
+  margin-top: 13px;
+}
 
- footer a{
-   font-size: 16px;
-   line-height: 30px;
- }
+.bigButton a:hover{
+  text-shadow: #01CDFE 0 -3px;
+}  
+
+/* Footer*/
+
+footer{
+  background-color: black;
+  margin-top: 90px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+footer a{
+  font-size: 16px;
+  line-height: 30px;
+}
