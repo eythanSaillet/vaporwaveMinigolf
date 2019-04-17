@@ -282,7 +282,6 @@ function nextPlayer(){
     currentlyPlayerNumber -= playerNumber
     currentlyPlayer = playerTab[currentlyPlayerNumber-1]
     console.log(currentlyPlayer)
-    console.log("test")
     level +=1
     nextLevel()
   }
@@ -342,7 +341,10 @@ function blowUp(){
 function nextLevel(){
 
   if (level == 2) {
-    level1.style.display = "none"
-    level1.style.display = "block"
+    setTimeout(function(){
+      level1.style.display = "none"
+      level2.style.display = "block"
+    }
+  ,300)
   }
 }
