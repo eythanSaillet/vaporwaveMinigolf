@@ -1,7 +1,7 @@
 let music = new Audio ('sounds/music.mp3');
 
 music.play();
-music.volume= 0.09;
+music.volume= 0.15;
 
 
 let playerSelector = document.querySelectorAll(".section_numberPlayer_player")
