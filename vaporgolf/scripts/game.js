@@ -1,16 +1,18 @@
-// const ballVisual = document.querySelector("#game_ball")
-// const cursorVisual = document.querySelector(".game_cursor")
 const mapVisual = document.querySelectorAll(".game_map")
 const mapVisualA = document.querySelector(".level1")
 const mapVisualB = document.querySelector(".level2")
 
-// Selection des p des scores
+// Selection des p --> board d'informations
 const pScore1 = document.querySelector("div.color1 p")
 const pScore2 = document.querySelector("div.color2 p")
 const pScore3 = document.querySelector("div.color3 p")
 const pScore4 = document.querySelector("div.color4 p")
 const pScore5 = document.querySelector("div.color5 p")
 const pScore6 = document.querySelector("div.color6 p")
+
+const pBounce = document.querySelector(".pBounce")
+const pLevel = document.querySelector(".pLevel")
+
 
 const barrierVisual = document.querySelector(".game_barrier")
 
@@ -62,6 +64,40 @@ let levelA = {
     }
   },
 
+
+}
+
+// Level objet 2
+
+let levelB = {
+
+  win : function(){
+
+    if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
+      console.log("win")
+      window.clearInterval(move)
+      win()
+      setTimeout(
+        function(){
+          ballVisual.style.display = "none"
+        }
+        ,50
+      )
+    }
+  },
+
+  blowUp : function(){
+    if (ball.posY<=0) {
+      window.clearInterval(move)
+      blowUp()
+    }
+  },
+
+  brick1 : function(){
+    if(ball.posX > 120 && ball.posX < 180 && ball.posY>430 && ball.posY<445){
+      dirY = -dirY
+    }
+  }
 
 }
 
@@ -147,6 +183,19 @@ function refreshScore(){
 
 }
 
+// Fonction refresh bounce
+
+function refreshBounce(){
+  bounce +=1
+  pBounce.innerHTML = bounce
+}
+
+// Fonction refresh level info
+
+function refreshLevel(){
+  pLevel.innerHTML = level
+}
+
 // Position de base de la balle
 
 ballVisual.style.left = ball.posX+"px"
@@ -196,13 +245,11 @@ function play(){
 
         if(ball.posX>=300 || ball.posX<=-10){
           ball.dirX=-ball.dirX
-          bounce +=1
-          console.log(bounce)
+          refreshBounce()
         }
-        if(ball.posY>=600 || ball.posY<=0){
+        if(ball.posY>=610 || ball.posY<=0){
           ball.dirY=-ball.dirY
-          bounce +=1
-          console.log(bounce)
+          refreshBounce()
         }
 
         requestAnimationFrame(function() {
@@ -218,11 +265,28 @@ function play(){
 
         // Test Win
 
-        levelA.win()
+        if(level == 1){
+          levelA.win()
+        }
+
+        if(level == 2 && playProcess == true){
+          levelB.win()
+        }
 
         // Test blowUp
 
-        levelA.blowUp()
+        if(level == 1){
+          levelA.blowUp()
+        }
+        if(level == 2){
+          levelB.blowUp()
+        }
+
+        // Collision brick & autres
+
+        if (level == 2) {
+          levelB.brick1()
+        }
 
       }
       ,ball.timer)
@@ -289,6 +353,8 @@ function resetBall(){
       cursorVisual.style.display = "block"
       cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
 
+      pBounce.innerHTML = 0
+
     }
     ,500
   )
@@ -298,6 +364,7 @@ function resetBall(){
 
 function win(){
   console.log("Le joueur "+currentlyPlayerNumber+" a fait "+bounce+" rebond(s).")
+  playProcess = false
 
   score[currentlyPlayerNumber-1] += bounce
 
@@ -374,12 +441,14 @@ function blowUp(){
 
 function nextLevel(){
 
+  console.log(currentlyPlayerNumber)
   if (level == 2) {
     setTimeout(function(){
       level1.style.display = "none"
       level2.style.display = "block"
       mapVisualA.removeChild(ballVisual)
       mapVisualB.appendChild(ballVisual)
+      refreshLevel()
     }
   ,300)
   }

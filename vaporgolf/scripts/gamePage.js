@@ -15,8 +15,6 @@ let gamePlayOptionResart = document.querySelector(".section_gamePlay_winner_hist
 let gamefinalScoreButton = document.querySelector(".section_gamePlay_finalScore_score_rejouer")
 
 
-console.log(pageNumberPlayerbutton)
-
 gamePlayOptionResart.addEventListener(
   "click",
   function(){
