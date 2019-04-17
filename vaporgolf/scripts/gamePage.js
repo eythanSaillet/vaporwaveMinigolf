@@ -13,8 +13,31 @@ let pageGamePlay = document.querySelector(".section_gamePlay")
 let pageGamePlayScore = document.querySelector(".section_gamePlay_Score")
 let pageGamePlayScoreButton = document.querySelector(".section_gamePlay_winnerName")
 let pageGamePlayScoreRejouer = document.querySelector(".section_gamePlay_finalScore_score_rejouer")
+let gamePlayOptionSongOn= document.querySelector(".section_gamePlay_winner_historical_option_song")
+let gamePlayOptionSongOff= document.querySelector(".section_gamePlay_winner_historical_option_songOff")
 
 console.log(pageNumberPlayerbutton)
+
+
+gamePlayOptionSongOn.addEventListener(
+  "click",
+  function(){
+    gamePlayOptionSongOn.style.visibility="hidden"
+    gamePlayOptionSongOff.style.visibility="visible"
+    music.pause();
+  }
+)
+
+gamePlayOptionSongOff.addEventListener(
+  "click",
+  function(){
+    gamePlayOptionSongOff.style.visibility="hidden"
+    gamePlayOptionSongOn.style.visibility="visible"
+    music.play();
+  }
+)
+
+
 
 
 pageNumberPlayerbutton.addEventListener(
