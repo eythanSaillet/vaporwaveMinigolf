@@ -29,11 +29,11 @@ let cursorAngle = 0
 // Variables infos joueurs
 
 let score1 = 0, score2 = 0, score3 = 0, score4 = 0, score5 = 0, score6 = 0
-let playerColor = ["","#FF1493","#00FF00","#FFFF00","#FF00FF","#000000","#FFA500"]
+let playerColor = ["","#FF1493","#00FF00","#FFFF00","#9400D3","#FFFFFF","#FFA500"]
 
 // Variables nombre de Joueurs
 
-let playerNumber = 4
+let playerNumber = 6
 let playerTab = []
 
 let currentlyPlayerNumber = 1
@@ -201,31 +201,37 @@ function resetBall(){
 // Fonction WIN --> point
 
 function win(){
-  console.log(currentlyPlayerNumber)
+  console.log("Le joueur "+currentlyPlayerNumber+" a fait "+bounce+" rebond(s).")
+
   if (currentlyPlayerNumber == 1) {
     score1 += bounce
+    console.log("Son score est maintenant de "+score1)
   }
 
   if (currentlyPlayerNumber == 2) {
     score2 += bounce
+    console.log("Son score est maintenant de "+score2)
   }
 
   if (currentlyPlayerNumber == 3) {
     score3 += bounce
+    console.log("Son score est maintenant de "+score3)
   }
 
   if (currentlyPlayerNumber == 4) {
     score4 += bounce
+    console.log("Son score est maintenant de "+score4)
   }
 
   if (currentlyPlayerNumber == 5) {
     score5 += bounce
+    console.log("Son score est maintenant de "+score5)
   }
 
   if (currentlyPlayerNumber == 6) {
     score6 += bounce
+    console.log("Son score est maintenant de "+score6)
   }
-  console.log(bounce)
   bounce = 0
   currentlyPlayerNumber += 1
   resetBall()
@@ -256,10 +262,6 @@ nextPlayer()
 function blowUp(){
 
   // Animation
-
-  console.log(currentlyPlayerNumber)
-  console.log(playerColor[currentlyPlayerNumber])
-
 
   ball.style.boxShadow = "0px 0px 1000px 100px" + playerColor[currentlyPlayerNumber]
   console.log("blow")
