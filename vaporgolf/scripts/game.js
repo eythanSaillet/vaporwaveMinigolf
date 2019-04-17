@@ -2,6 +2,16 @@ let ballVisual = document.querySelector("#game_ball")
 let mapVisual = document.querySelector(".game_map")
 let cursorVisual = document.querySelector(".game_cursor")
 let barrierVisual = document.querySelector(".game_barrier")
+
+let onePlayer = document.querySelector(".playerOne")
+let twoPlayer = document.querySelector(".playerTwo")
+let threePlayer = document.querySelector(".playerThree")
+let fourPlayer = document.querySelector(".playerFour")
+let fivePlayer = document.querySelector(".playerFive")
+let sixPlayer = document.querySelector(".playerSix")
+
+console.log(onePlayer)
+
 let move
 
 let ball = {
@@ -42,7 +52,6 @@ let levelA = {
 
 }
 
-
 let bounce = 0
 let playProcess = false
 let cursorAngle = 0
@@ -68,6 +77,12 @@ for (var i = 0; i < playerNumber; i++) {
   let tempI = i+1
   playerTab.push("player"+tempI)
 }
+
+// Définition nombre de joueurs
+
+onePlayer.addEventListener('click', function(){
+  console.log("1 joueur")
+})
 
 console.log(playerTab)
 
