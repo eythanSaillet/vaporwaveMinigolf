@@ -11,7 +11,6 @@ body{
   background-image:url(../images/background.jpg);
   overflow: scroll;
   background-attachment: fixed;
-  background-repeat: repeat-x ;
   height: 100%;
 }
 
@@ -167,18 +166,32 @@ SECTION GAMEPLAY
 }
 
 .section_gamePlay_players{
-  width: 25%;
-  height: 650px
+  background-color: blue;
+  width: 23%;
+  margin-top: -25px;
+  height: 600px;
+  margin-left: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-width : 1px;
+  border-style :solid;
+  border-color: white;
 }
 
 .section_gamePlay_game{
   width: 50%;
   margin-top: -115px;
+
 }
 
 .section_gamePlay_winner{
-  width: 25%;
-  height: 650px
+  margin-top: -25px;
+  height: 600px;
+  background-color: blue;
+  width: 23%;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-width : 1px;
+  border-style :solid;
+  border-color: white;
 }
 
 .section_gamePlay_playerScore{
@@ -194,7 +207,6 @@ SECTION GAMEPLAY
 .section_gamePlay_playerScore h1{
   text-align: center;
   font-family: 'SF Alien Encounters';
-  color : white;
   font-size:22px;
   margin: 10px;
   margin-top: 13px;
@@ -207,59 +219,113 @@ SECTION GAMEPLAY
   color : white;
 }
 
-.color1{
-  background: rgba(255,20,147,0.4)
+.color1 h1{
+  color: rgb(255,20,147)
 }
-.color2{
-  background: rgba(0,255,0,0.4)
+.color2 h1{
+  color: rgb(0,255,0)
 }
-.color3{
-  background: rgba(255,255,0,0.4)
+.color3 h1{
+  color: rgb(255,255,0)
 }
-.color4{
-  background: rgba(148,0,211,0.4)
+.color4 h1{
+color: rgb(148,0,211)
 }
-.color5{
-  background: rgba(255,255,255,0.4)
+.color5 h1{
+  color: rgb(255,255,255)
 }
-.color6{
-  background: rgba(255,89,0,0.4)
+.color6 h1{
+  color: rgb(255,89,0)
 }
 
+.color1 p{
+  color: rgb(255,20,147)
+}
+.color2 p{
+  color: rgb(0,255,0)
+}
+.color3 p{
+  color: rgb(255,255,0)
+}
+.color4 p{
+color: rgb(148,0,211)
+}
+.color5 p{
+  color: rgb(255,255,255)
+}
+.color6 p{
+  color: rgb(255,89,0)
+}
+
+
+.color1 {
+  border-color: rgb(255,20,147)
+}
+.color2 {
+  border-color: rgb(0,255,0)
+}
+.color3 {
+  border-color:rgb(255,255,0)
+}
+.color4 {
+  border-color: rgb(148,0,211)
+}
+.color5 {
+  border-color: rgb(255,255,255)
+}
+.color6 {
+  border-color: rgb(255,89,0)
+}
+
+
 .section_gamePlay_winnerName{
+  width: 200px;
+  height: 70px;
+  margin: auto;
+  border-width : 1px;
+  border-style :solid;
+  border-color: white;
+}
+
+.section_gamePlay_winnerName h1{
+  text-align: center;
+  color : white;
+  font-size:22px;
+  margin: auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'SF Alien Encounters';
+  height:70px;
+}
+
+.section_gamePlay_winnerName p{
+  margin-top: 0px;
+  text-align: center;
+  color : white;
+}
+.section_gamePlay_winner_historical{
   width: 200px;
   height: 72px;
   margin: auto;
   border-width : 1px;
   border-style :solid;
   border-color: white;
-  margin-bottom: 20px;
 }
 
-.section_gamePlay_winnerName h1{
-  text-align: center;
-  font-family: 'SF Alien Encounters';
-  color : white;
-  font-size:22px;
-  margin-top:15%;
-
-}
-
-.section_gamePlay_winner_historical{
+.section_gamePlay_winner_historical_imgG{
   width: 200px;
-  height: 80px;
+  height: 160px;
   margin: auto;
   border-width : 1px;
   border-style :solid;
-  border-color: white;
+  border-color: #3edffe;
 }
+
 .section_gamePlay_winner_historical_imgGame{
   width: 200px;
   height: 80px;
   margin: auto;
-  border-width : 1px;
-  border-style :solid;
-  border-color: white;
   background-color: rgba(0, 0, 0, 0.6)
 }
 
@@ -276,21 +342,40 @@ SECTION GAMEPLAY
   border-width : 1px;
   border-style :solid;
   border-color: white;
-  margin-top: 20px;
-  background-color: rgba(0, 0, 0, 0.6)
+  background-color: rgba(0, 0, 0, 0.6);
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .section_gamePlay_winner_historical_img img{
   width: auto;
-  height: 100%;
+  height: 80%;
 }
+
+.section_gamePlay_winner_historical_sound{
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  border-width : 1px;
+  border-style :solid;
+  border-color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .section_gamePlay_winner_historical h1{
   text-align: center;
-  font-family: 'SF Alien Encounters';
   color : white;
   font-size:22px;
-  margin: 10px;
-  margin-top: 13px;
+  margin: auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'SF Alien Encounters';
+  height:70px;
 }
 
 .section_gamePlay_winner_historical p{
@@ -300,9 +385,6 @@ SECTION GAMEPLAY
   margin: 5px;
 }
 
-.section_gamePlay_winner_winnerOfLevel{
-  margin: 17px;
-}
 
 /*
 FINAL SCORE
