@@ -91,8 +91,6 @@ a:hover{
 
 .text p{
   color: orange;
-  margin-top: 50px;
-  margin-bottom: 90px;
 }
 
 .playButton{
@@ -101,15 +99,11 @@ a:hover{
   color: #01CDFE;
 }
 
-.playButton a:hover{
-  text-shadow: #ff71ce 0 -3px;
-}
-
 /* Screenshots of the game */
 
 .screenshots{
   flex-direction: row;
-  margin-top: 100px;
+  margin-top: 90px;
   justify-content: space-around;
 }
 
@@ -118,7 +112,6 @@ a:hover{
   height: 400px;
   background-color: white;
   justify-content: space-around;
-  margin-bottom: 30px;
 }
 
 .learnMore p{
@@ -131,14 +124,15 @@ a:hover{
   width: 200px;
   height: 72px;
   margin: auto;
-  margin-top: 60px;
   border-style :solid;
   border-color: white;
   margin-bottom: 20px;
+
+
+
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items:center;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .bigButton a{
@@ -154,7 +148,7 @@ a:hover{
 
 .bigButton a:hover{
   text-shadow: #01CDFE 0 -3px;
-}
+}  
 
 /* Footer*/
 
