@@ -1,6 +1,7 @@
 html body{
   overflow: hidden;
 }
+
 body{
   margin:0;
   padding:0;
@@ -163,6 +164,10 @@ SECTION GAMEPLAY
 .section_gamePlay{
   visibility: hidden;
   padding-top: 3%;
+  height: 100%;
+  background-color: blue;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .section_gamePlay_players{
@@ -201,7 +206,6 @@ SECTION GAMEPLAY
   border-width : 1px;
   border-style :solid;
   border-color: white;
-  margin-bottom: 20px;
 }
 
 .section_gamePlay_playerScore h1{
