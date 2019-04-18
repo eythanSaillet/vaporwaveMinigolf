@@ -36,6 +36,8 @@ const hScore6 = document.querySelector("div.color6 h1")
 const bounceSound = new Audio ('sounds/bounce.mp3')
 const launchSound = new Audio ('sounds/golfhitball.mp3')
 const selectionSound = new Audio ('sounds/selection-sound.mp3')
+const blowUpSound = new Audio ('sounds/explosion.mp3')
+const holeSound = new Audio ('sounds/hole-sound.mp3')
 
 
 let redShining = document.querySelectorAll(".redShining")
@@ -568,6 +570,7 @@ function resetBall(){
 // Fonction WIN --> point
 
 function win(){
+  holeSound.play()
   console.log("Le joueur "+currentlyPlayerNumber+" a fait "+bounce+" rebond(s).")
   playProcess = false
 
@@ -602,6 +605,8 @@ nextPlayer()
 // Fonction explosion
 
 function blowUp(){
+
+  blowUpSound.play()
 
   // Animation
 
