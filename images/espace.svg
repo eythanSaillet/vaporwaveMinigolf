@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+	 viewBox="0 0 305 500" style="enable-background:new 0 0 305 500;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
 	.st1{fill:#D5158F;stroke:#3EDFFE;stroke-width:4;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#323232;stroke-width:4;stroke-miterlimit:10;}
 	.st3{fill:#323232;stroke:#323232;stroke-width:4;stroke-miterlimit:10;}
 </style>
-<path class="st0" d="M325.72,137.09"/>
-<path class="st1" d="M129,108.71v132.47c0,5.25,4.26,9.51,9.51,9.51h99.88c5.25,0,9.51,4.26,9.51,9.51v151.84
-	c0,5.25,4.26,9.51,9.51,9.51h77.08c5.25,0,9.51-4.26,9.51-9.51V54.45c0-5.25-4.26-9.51-9.51-9.51H138.51
-	c-5.25,0-9.51,4.26-9.51,9.51V108.71z"/>
-<polyline class="st2" points="216.41,189.01 300.12,189.01 300.12,153.9 272.33,153.9 "/>
-<polygon class="st3" points="200.35,189.01 223.59,200.31 223.59,177.71 "/>
+<path class="st0" d="M237.72,148.09"/>
+<path class="st1" d="M41,119.71v132.47c0,5.25,4.26,9.51,9.51,9.51h99.88c5.25,0,9.51,4.26,9.51,9.51v151.84
+	c0,5.25,4.26,9.51,9.51,9.51h77.08c5.25,0,9.51-4.26,9.51-9.51V65.45c0-5.25-4.26-9.51-9.51-9.51H50.51c-5.25,0-9.51,4.26-9.51,9.51
+	V119.71z"/>
+<polyline class="st2" points="128.41,200.01 212.12,200.01 212.12,164.9 184.33,164.9 "/>
+<polygon class="st3" points="112.35,200.01 135.59,211.31 135.59,188.71 "/>
 </svg>
