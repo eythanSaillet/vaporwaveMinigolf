@@ -222,6 +222,7 @@ let levelC = {
     if(ball.posX >= 140 && ball.posX <= 160 && ball.posY>=340 && ball.posY<=360){
       window.clearInterval(move)
       blowUp()
+      refreshBounce()
     }
   },
 
@@ -229,6 +230,7 @@ let levelC = {
     if(ball.posX >= 35 && ball.posX <= 55 && ball.posY>=200 && ball.posY<=220){
       window.clearInterval(move)
       blowUp()
+      refreshBounce()
     }
   },
 
@@ -236,6 +238,7 @@ let levelC = {
     if(ball.posX >= 55 && ball.posX <= 75 && ball.posY>=400 && ball.posY<=420){
       window.clearInterval(move)
       blowUp()
+      refreshBounce()
     }
   },
 
@@ -243,6 +246,7 @@ let levelC = {
     if(ball.posX >= 260 && ball.posX <= 280 && ball.posY>=290 && ball.posY<=310){
       window.clearInterval(move)
       blowUp()
+      refreshBounce()
     }
   },
 
