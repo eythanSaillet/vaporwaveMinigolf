@@ -117,8 +117,26 @@ let levelB = {
   },
 
   brick1 : function(){
-    if(ball.posX > 120 && ball.posX < 180 && ball.posY>430 && ball.posY<445){
-      dirY = -dirY
+    if(ball.posX >= 110 && ball.posX <= 190 && ball.posY>=430 && ball.posY<=460){
+      ball.dirY = -ball.dirY
+    }
+    if(ball.posX >= 110 && ball.posX <= 125 && ball.posY>=430 && ball.posY<=460){
+      ball.dirX = -ball.dirX
+    }
+    if(ball.posX >= 175 && ball.posX <= 190 && ball.posY>=430 && ball.posY<=460){
+      ball.dirX = -ball.dirX
+    }
+  },
+
+  brick2 : function(){
+    if(ball.posX >= 170 && ball.posX <= 230 && ball.posY>=160 && ball.posY<=190){
+      ball.dirY = -ball.dirY
+    }
+    if(ball.posX >= 170 && ball.posX <= 185 && ball.posY>=160 && ball.posY<=190){
+      ball.dirX = -ball.dirX
+    }
+    if(ball.posX >= 215 && ball.posX <= 230 && ball.posY>=160 && ball.posY<=190){
+      ball.dirX = -ball.dirX
     }
   }
 
@@ -131,6 +149,7 @@ let cursorAngle = 0
 // Info level
 
 let level = 1
+let totalLevel = 2
 
 // Variables infos joueurs
 
@@ -308,7 +327,7 @@ setInterval(function(){
 ,500
 )
 
-// Fonction PLAY + test WIN
+// Fonction PLAY + test WIN, Blow UP, bounce
 
 function play(){
   if (playProcess == false) {
@@ -341,6 +360,8 @@ function play(){
 
           cursorVisual.style.display = "none"
 
+          console.log(ball.posX,ball.posY)
+
         })
 
         // Test Win
@@ -366,6 +387,7 @@ function play(){
 
         if (level == 2) {
           levelB.brick1()
+          levelB.brick2()
         }
 
       }
