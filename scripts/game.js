@@ -3,6 +3,7 @@ const mapVisualA = document.querySelector(".level1")
 const mapVisualB = document.querySelector(".level2")
 const mapVisualC = document.querySelector(".level3")
 const mapVisualD = document.querySelector(".level4")
+const mapVisualE = document.querySelector(".level5")
 
 // Selection des div du scoreboard
 
@@ -67,6 +68,7 @@ let level1 = document.querySelector(".level1")
 let level2 = document.querySelector(".level2")
 let level3 = document.querySelector(".level3")
 let level4 = document.querySelector(".level4")
+let level5 = document.querySelector(".level5")
 
 let onePlayer = document.querySelector(".playerOne")
 let twoPlayer = document.querySelector(".playerTwo")
@@ -335,6 +337,33 @@ let levelD = {
 
 }
 
+// Objet level 5
+
+let levelE = {
+
+  win : function(){
+
+    if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
+      window.clearInterval(move)
+      win()
+      setTimeout(
+        function(){
+          ballVisual.style.display = "none"
+        }
+        ,50
+      )
+    }
+  },
+
+  blowUp : function(){
+    if (ball.posY<=0) {
+      window.clearInterval(move)
+      blowUp()
+    }
+  },
+
+}
+
 let bounce = 0
 let playProcess = false
 let cursorAngle = 0
@@ -343,7 +372,7 @@ let cursorDir = true
 // Info level
 
 let level = 1
-let totalLevel = 4
+let totalLevel = 5
 
 // Variables infos joueurs
 
@@ -629,6 +658,9 @@ function play(){
         if(level == 4 && playProcess == true){
           levelD.win()
         }
+        if(level == 5 && playProcess == true){
+          levelE.win()
+        }
 
         // Test blowUp
 
@@ -646,6 +678,9 @@ function play(){
         }
         if(level == 4){
           levelD.blowUp()
+        }
+        if(level == 5){
+          levelE.blowUp()
         }
 
         // Collision brick & autres
@@ -856,6 +891,16 @@ function nextLevel(){
       level4.style.display = "block"
       mapVisualC.removeChild(ballVisual)
       mapVisualD.appendChild(ballVisual)
+      refreshLevel()
+    }
+  ,300)
+  }
+  if (level == 5) {
+    setTimeout(function(){
+      level4.style.display = "none"
+      level5.style.display = "block"
+      mapVisualD.removeChild(ballVisual)
+      mapVisualE.appendChild(ballVisual)
       refreshLevel()
     }
   ,300)

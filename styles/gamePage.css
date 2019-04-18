@@ -843,3 +843,9 @@ FINAL SCORE
   position: absolute;
   border-radius: 20px;
 }
+
+/* Level 5 */
+
+.level5{
+  display:none;
+}
