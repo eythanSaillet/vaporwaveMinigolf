@@ -3,9 +3,9 @@ html body{
 }
 
 body{
+  font-family: 'Roboto', 'Arial', sans-serif;
   margin:0;
   padding:0;
-  font-family: 'Roboto', 'Arial', sans-serif;
   font-size:17px;
   color:#444;
   background-size: 100%;
@@ -37,24 +37,6 @@ main{
   align-items:center;
 }
 
-.container1{
-  width:100%;
-  margin: auto;
-  height: 50px;
-  margin-bottom: 20px;
-}
-
-.container1 h2{
-  margin: auto;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'SF Alien Encounters';
-  color : white;
-  font-size:30px;
-  width: 100%;
-  height:100%;
-}
 /*
 SECTION NUMBER OF PLAYER
 */
@@ -161,15 +143,15 @@ NUMBER OF PLAYER
 }
 
 .playerFour:hover{
-  text-shadow: ##9400D3 0 -3px;
+  text-shadow: #9400D3 0 -3px;
 }
 
 .playerFive:hover{
-  text-shadow: ##FFFFFF 0 -3px;
+  text-shadow: #FFFFFF 0 -3px;
 }
 
 .playerSix:hover{
-  text-shadow: ##FFA500 0 -3px;
+  text-shadow: #FFA500 0 -3px;
 }
 
 .section_numberPlayer{
@@ -177,7 +159,8 @@ NUMBER OF PLAYER
   padding-top:2%;
   height: 800px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8)
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 100px;
 }
 
 .section_numberPlayer_player{
@@ -393,13 +376,26 @@ color: rgb(202,101,245)
 }
 
 .section_gamePlay_winner_historical_imgGame{
-  width: 200px;
-  height: 80px;
+  height: 100%;
+  width: 80px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.6)
+}
+
+.section_gamePlay_winner_historical_imgGame1{
+  height: 100%;
+  width: 80px;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.6)
 }
 
 .section_gamePlay_winner_historical_imgGame img{
+  width: 80%;
+  height: auto;
+  margin: auto;
+}
+
+.section_gamePlay_winner_historical_imgGame1 img{
   width: auto;
   height: 80%;
   margin: auto;
