@@ -9,11 +9,11 @@ body{
   color: #01CDFE;
   background-image: url(../images/background.jpg);
   background-size: 110%;
-  background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   margin: 0 auto;
   text-align: center;
+  height: 100px;
 }
 
 @font-face {

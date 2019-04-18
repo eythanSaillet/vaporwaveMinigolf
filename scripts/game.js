@@ -694,9 +694,24 @@ function nextLevel(){
   if(level == totalLevel+1){
 
     // Tri des scores
-
-    // Affichage scores
     
+    function orderAlg(a, b) {
+       if (a<b) return -1
+       else if (a>b) return 1
+       else return 0
+     }
+
+    let newOrder = score.slice(0).sort(orderAlg)
+    const allRows = document.querySelector(".section_gamePlay_finalScore")
+
+    for(let i = 0; i < newOrder.length; i++){
+      if(playerTab[score.indexOf(newOrder[i])] === undefined) return
+      let child = allRows.children[i + 1]
+      child.querySelector('.section_gamePlay_finalScore_joueur h2').innerHTML = playerTab[score.indexOf(newOrder[i])]
+      child.querySelector('.section_gamePlay_finalScore_score h2').innerHTML = newOrder[i]
+    }
+
+
     setTimeout(function(){
       gameOverlay.style.display = "none"
       finalOverlay.style.visibility = "visible"
