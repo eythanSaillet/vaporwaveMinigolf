@@ -117,25 +117,31 @@ let levelB = {
   },
 
   brick1 : function(){
-    if(ball.posX >= 110 && ball.posX <= 190 && ball.posY>=430 && ball.posY<=460){
+    if(ball.posX >= 120 && ball.posX <= 180 && ball.posY>=430 && ball.posY<=440){
+      ball.dirY = -ball.dirY
+    }
+    if(ball.posX >= 120 && ball.posX <= 180 && ball.posY>=450 && ball.posY<=460){
       ball.dirY = -ball.dirY
     }
     if(ball.posX >= 110 && ball.posX <= 125 && ball.posY>=430 && ball.posY<=460){
       ball.dirX = -ball.dirX
     }
-    if(ball.posX >= 175 && ball.posX <= 190 && ball.posY>=430 && ball.posY<=460){
+    if(ball.posX >= 180 && ball.posX <= 190 && ball.posY>=430 && ball.posY<=460){
       ball.dirX = -ball.dirX
     }
   },
 
   brick2 : function(){
-    if(ball.posX >= 170 && ball.posX <= 230 && ball.posY>=160 && ball.posY<=190){
+    if(ball.posX >= 180 && ball.posX <= 220 && ball.posY>=160 && ball.posY<=170){
       ball.dirY = -ball.dirY
     }
-    if(ball.posX >= 170 && ball.posX <= 185 && ball.posY>=160 && ball.posY<=190){
+    if(ball.posX >= 180 && ball.posX <= 220 && ball.posY>=180 && ball.posY<=190){
+      ball.dirY = -ball.dirY
+    }
+    if(ball.posX >= 170 && ball.posX <= 180 && ball.posY>=160 && ball.posY<=190){
       ball.dirX = -ball.dirX
     }
-    if(ball.posX >= 215 && ball.posX <= 230 && ball.posY>=160 && ball.posY<=190){
+    if(ball.posX >= 220 && ball.posX <= 230 && ball.posY>=160 && ball.posY<=190){
       ball.dirX = -ball.dirX
     }
   }
