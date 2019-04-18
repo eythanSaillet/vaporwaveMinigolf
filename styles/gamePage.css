@@ -656,12 +656,12 @@ FINAL SCORE
   border-top: 2px solid black;
   border-left: 2px solid black;
   border-right: 2px solid black;
-  border-bottom: 2px solid red;
   position: relative;
   margin: 0 auto;
   box-shadow: 0px 0px 40px 20px #FF02FF;
   background: rgba(0,0,0);
 }
+
 
 #game_ball{
   height: 10px;
@@ -796,3 +796,70 @@ FINAL SCORE
     border-radius: 20px;
     transition: all 250ms linear;
   }
+
+/* Level 4 */
+
+.level4{
+  display: none;
+}
+
+.level4 .game_Brick1 {
+  position: absolute;
+  background-color: #0ff;
+  bottom: 150px;
+  left: 220px;
+  height: 50px;
+  width: 30px;
+  box-shadow: 0px 0px 20px 2px #0ff;
+}
+
+.level4 .game_Brick2{
+  position: absolute;
+  background-color: #0ff;
+  bottom: 300px;
+  left: 65px;
+  height: 50px;
+  width: 30px;
+  box-shadow: 0px 0px 20px 2px #0ff;
+}
+
+.level4 .game_Brick3{
+  position: absolute;
+  background-color: #0ff;
+  bottom: 380px;
+  left: 210px;
+  height: 50px;
+  width: 30px;
+  box-shadow: 0px 0px 20px 2px #0ff;
+}
+
+.level4 .game_Brick4{
+  position: absolute;
+  background-color: #0ff;
+  bottom: 500px;
+  left: 180px;
+  height: 50px;
+  width: 40px;
+  box-shadow: 0px 0px 20px 2px #0ff;
+}
+
+.level4 .game_Brick5{
+  position: absolute;
+  background-color: #0ff;
+  bottom: 485px;
+  left: 90px;
+  height: 30px;
+  width: 130px;
+  box-shadow: 0px 0px 20px 2px #0ff;
+}
+
+
+.level4 .game_hole{
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  top: 57px;
+  left: 150px;
+  position: absolute;
+  border-radius: 20px;
+}

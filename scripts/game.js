@@ -695,8 +695,8 @@ function nextLevel(){
 
     // Tri des scores
 
-
-
+    // Affichage scores
+    
     setTimeout(function(){
       gameOverlay.style.display = "none"
       finalOverlay.style.visibility = "visible"
@@ -711,7 +711,7 @@ function nextLevel(){
 
 function tabRankCreation(){
   for (var i = 0; i < playerNumber; i++) {
-    
+
   }
 }
 
