@@ -252,7 +252,7 @@ let levelD = {
 
   win : function(){
 
-    if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
+    if(ball.posY>525 && ball.posY<545 && ball.posX>137 && ball.posX<163){
       console.log("win")
       window.clearInterval(move)
       win()
