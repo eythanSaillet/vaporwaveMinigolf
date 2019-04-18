@@ -666,19 +666,19 @@ FINAL SCORE
 .game_brick{
   position: absolute;
   background-color: #0ff;
-  bottom: -10px;
-  left: 120px;
-  top: 129px;
+  left: 110px;
+  bottom: 430px;
   height: 30px;
-  width: 57px;
+  width: 80px;
+  box-shadow: 0px 0px 20px 2px #0ff;
 }
 
 .game_brick2{
   position: absolute;
   background-color: #0ff;
-  bottom: -10px;
-  left: 171px;
-  top: 421px;
+  left: 170px;
+  bottom: 160px;
   height: 30px;
-  width: 57px;
+  width: 60px;
+  box-shadow: 0px 0px 20px 2px #0ff;
 }
