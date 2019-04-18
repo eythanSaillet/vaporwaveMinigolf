@@ -93,9 +93,12 @@ SECTION NUMBER OF PLAYER
   width: 100%;
 }
 
-
+.section_numberPlayer_header_intruction_inE {
+  width: 20%;
+  height: 80%;
+}
 .section_numberPlayer_header_intruction_in {
-  width: 50%;
+  width: 40%;
   height: 80%;
 }
 
@@ -106,6 +109,8 @@ SECTION NUMBER OF PLAYER
 
 .section_numberPlayer_header_intruction_in h1{
   margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
   display:flex;
   justify-content: center;
   align-items: center;
