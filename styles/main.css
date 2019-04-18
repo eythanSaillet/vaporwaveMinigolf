@@ -157,6 +157,17 @@ footer{
   flex-direction: column;
 }
 
+  footer p{
+    font-family: 'Comic Sans MS';
+    color: black;
+    padding: 0px;
+    margin: 0px;
+  }
+
+footer p:hover{
+  color: #01CDFE;
+}
+
 footer a{
   font-size: 16px;
   line-height: 30px;
