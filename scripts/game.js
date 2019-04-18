@@ -2,6 +2,22 @@ const mapVisual = document.querySelectorAll(".game_map")
 const mapVisualA = document.querySelector(".level1")
 const mapVisualB = document.querySelector(".level2")
 const mapVisualC = document.querySelector(".level3")
+const mapVisualD = document.querySelector(".level4")
+
+// Selection des div du scoreboard
+
+const divScoreboard1 = document.querySelector(".Score_player_rank1")
+const divScoreboard2 = document.querySelector(".Score_player_rank2")
+const divScoreboard3 = document.querySelector(".Score_player_rank3")
+const divScoreboard4 = document.querySelector(".Score_player_rank4")
+const divScoreboard5 = document.querySelector(".Score_player_rank5")
+
+const hScoreboard1 = document.querySelector(".Score_player_rank1 .section_gamePlay_finalScore_score h2")
+const hScoreboard2 = document.querySelector(".Score_player_rank2 .section_gamePlay_finalScore_score h2")
+const hScoreboard3 = document.querySelector(".Score_player_rank3 .section_gamePlay_finalScore_score h2")
+const hScoreboard4 = document.querySelector(".Score_player_rank4 .section_gamePlay_finalScore_score h2")
+const hScoreboard5 = document.querySelector(".Score_player_rank5 .section_gamePlay_finalScore_score h2")
+const hScoreboard6 = document.querySelector(".Score_player_rank6 .section_gamePlay_finalScore_score h2")
 
 // Selection des p --> board d'informations
 const pScore1 = document.querySelector("div.color1 p")
@@ -50,6 +66,7 @@ let redShining = document.querySelectorAll(".redShining")
 let level1 = document.querySelector(".level1")
 let level2 = document.querySelector(".level2")
 let level3 = document.querySelector(".level3")
+let level4 = document.querySelector(".level4")
 
 let onePlayer = document.querySelector(".playerOne")
 let twoPlayer = document.querySelector(".playerTwo")
@@ -201,13 +218,6 @@ let levelC = {
     }
   },
 
-  // blowUp : function(){
-  //   if (ball.posY<=0) {
-  //     window.clearInterval(move)
-  //     blowUp()
-  //   }
-  // },
-
   trap1 : function(){
     if(ball.posX >= 140 && ball.posX <= 160 && ball.posY>=340 && ball.posY<=360){
       window.clearInterval(move)
@@ -238,6 +248,32 @@ let levelC = {
 
 }
 
+let levelD = {
+
+  win : function(){
+
+    if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
+      console.log("win")
+      window.clearInterval(move)
+      win()
+      setTimeout(
+        function(){
+          ballVisual.style.display = "none"
+        }
+        ,50
+      )
+    }
+  },
+
+  blowUp : function(){
+    if (ball.posY<=0) {
+      window.clearInterval(move)
+      blowUp()
+    }
+  },
+
+}
+
 let bounce = 0
 let playProcess = false
 let cursorAngle = 0
@@ -246,13 +282,14 @@ let cursorDir = true
 // Info level
 
 let level = 1
-let totalLevel = 3
+let totalLevel = 4
 
 // Variables infos joueurs
 
 let score = [0,0,0,0,0,0]
 let playerColor = ["","#FF1493","#00FF00","#FFFF00","#9400D3","#FFFFFF","#FFA500"]
 let tabRank = new Array()
+let newOrder
 
 // Variables nombre de Joueurs
 
@@ -261,6 +298,14 @@ let playerTab = []
 
 let currentlyPlayerNumber = 1
 let currentlyPlayer = ""
+
+// Best scores
+let bestScore = localStorage.getItem('bestScore')
+let nameBestScore = localStorage.getItem('nameBestScore')
+let highScore
+if(bestScore == null){
+  bestScore = 999;
+}
 
 // Création de la ball et du Curseur
 
@@ -291,6 +336,12 @@ onePlayer.addEventListener('click', function(){
   divScore6.style.borderColor = "grey"
   hScore6.style.color = "grey"
   pScore6.style.color = "grey"
+
+  divScoreboard1.style.display = "none"
+  divScoreboard2.style.display = "none"
+  divScoreboard3.style.display = "none"
+  divScoreboard4.style.display = "none"
+  divScoreboard5.style.display = "none"
 })
 
 twoPlayer.addEventListener('click', function(){
@@ -308,6 +359,11 @@ twoPlayer.addEventListener('click', function(){
   divScore6.style.borderColor = "grey"
   hScore6.style.color = "grey"
   pScore6.style.color = "grey"
+
+  divScoreboard1.style.display = "none"
+  divScoreboard2.style.display = "none"
+  divScoreboard3.style.display = "none"
+  divScoreboard4.style.display = "none"
 })
 
 threePlayer.addEventListener('click', function(){
@@ -322,6 +378,10 @@ threePlayer.addEventListener('click', function(){
   divScore6.style.borderColor = "grey"
   hScore6.style.color = "grey"
   pScore6.style.color = "grey"
+
+  divScoreboard1.style.display = "none"
+  divScoreboard2.style.display = "none"
+  divScoreboard3.style.display = "none"
 })
 
 fourPlayer.addEventListener('click', function(){
@@ -333,6 +393,9 @@ fourPlayer.addEventListener('click', function(){
   divScore6.style.borderColor = "grey"
   hScore6.style.color = "grey"
   pScore6.style.color = "grey"
+
+  divScoreboard1.style.display = "none"
+  divScoreboard2.style.display = "none"
 })
 
 fivePlayer.addEventListener('click', function(){
@@ -341,6 +404,8 @@ fivePlayer.addEventListener('click', function(){
   divScore6.style.borderColor = "grey"
   hScore6.style.color = "grey"
   pScore6.style.color = "grey"
+
+  divScoreboard1.style.display = "none"
 })
 
 sixPlayer.addEventListener('click', function(){
@@ -352,7 +417,7 @@ function playerTabCreation(){
   selectionSound.play()
   for (var i = 0; i < playerNumber; i++) {
     let tempI = i+1
-    playerTab.push("player"+tempI)
+    playerTab.push("Joueur "+tempI)
   }
   console.log(playerTab)
   tabRankCreation()
@@ -481,7 +546,10 @@ function play(){
           levelB.win()
         }
         if(level == 3 && playProcess == true){
-          levelB.win()
+          levelC.win()
+        }
+        if(level == 4 && playProcess == true){
+          levelD.win()
         }
 
         // Test blowUp
@@ -497,6 +565,9 @@ function play(){
           levelC.trap2()
           levelC.trap3()
           levelC.trap4()
+        }
+        if(level == 4){
+          levelD.blowUp()
         }
 
         // Collision brick & autres
@@ -666,11 +737,16 @@ function blowUp(){
   )
 }
 
+function orderAlg(a, b) {
+   if (a<b) return -1
+   else if (a>b) return 1
+   else return 0
+ }
+
 function nextLevel(){
 
   levelSound.play()
 
-  console.log(currentlyPlayerNumber)
   if (level == 2) {
     setTimeout(function(){
       level1.style.display = "none"
@@ -691,36 +767,39 @@ function nextLevel(){
     }
   ,300)
   }
-  if(level == totalLevel+1){
-
-    // Tri des scores
-    
-    function orderAlg(a, b) {
-       if (a<b) return -1
-       else if (a>b) return 1
-       else return 0
-     }
-
-    let newOrder = score.slice(0).sort(orderAlg)
-    const allRows = document.querySelector(".section_gamePlay_finalScore")
-
-    for(let i = 0; i < newOrder.length; i++){
-      if(playerTab[score.indexOf(newOrder[i])] === undefined) return
-      let child = allRows.children[i + 1]
-      child.querySelector('.section_gamePlay_finalScore_joueur h2').innerHTML = playerTab[score.indexOf(newOrder[i])]
-      child.querySelector('.section_gamePlay_finalScore_score h2').innerHTML = newOrder[i]
+  if (level == 4) {
+    setTimeout(function(){
+      level3.style.display = "none"
+      level4.style.display = "block"
+      mapVisualC.removeChild(ballVisual)
+      mapVisualD.appendChild(ballVisual)
+      refreshLevel()
     }
-
+  ,300)
+  }
+  if(level == totalLevel+1){
 
     setTimeout(function(){
       gameOverlay.style.display = "none"
       finalOverlay.style.visibility = "visible"
+
+      let newOrder = score.slice(0).sort(orderAlg)
+      const allRows = document.querySelector(".section_gamePlay_finalScore")
+
+      for(let i = 0; i < newOrder.length; i++){
+        // if(playerTab[score.indexOf(newOrder[i])] === undefined) return
+        let child = allRows.children[i + 1]
+        child.querySelector('.section_gamePlay_finalScore_joueur h2').innerHTML = playerTab[score.indexOf(newOrder[i])]
+        child.querySelector('.section_gamePlay_finalScore_score h2').innerHTML = newOrder[i]
+      }
+
+      bestScoreChange()
     }
   ,300)
+
+
   }
 }
-
-
 // Fonction affichage classement
 
 
@@ -753,3 +832,51 @@ setInterval(
   }
   ,50
 )
+
+function bestScoreChange(){
+
+  setTimeout(function(){
+    if(playerNumber == 1){
+      highScore = parseInt(hScoreboard6.innerHTML)
+    }
+    if(playerNumber == 2){
+      highScore = parseInt(hScoreboard5.innerHTML)
+      console.log(hScoreboard5.innerHTML)
+      console.log(highScore)
+      console.log(parseInt(hScoreboard5.innerHTML))
+    }
+    if(playerNumber == 3){
+      highScore = parseInt(hScoreboard4.innerHTML)
+    }
+    if(playerNumber == 4){
+      highScore = parseInt(hScoreboard3.innerHTML)
+    }
+    if(playerNumber == 5){
+      highScore = parseInt(hScoreboard2.innerHTML)
+    }
+    if(playerNumber == 6){
+      highScore = parseInt(hScoreboard1.innerHTML)
+    }
+
+    if(highScore<bestScore)
+    {
+        do{
+            nameBestScore=window.prompt('Entrez 3 caractères pour sauvegarder votre score !')
+            console.log(nameBestScore)
+        }while(nameBestScore.length != 3)
+
+        nameBestScore=nameBestScore.toUpperCase()
+        bestScore=highScore
+    }
+
+    localStorage.setItem('bestScore', highScore)
+    console.log(bestScore)
+
+    localStorage.setItem('nameBestScore' ,nameBestScore)
+    console.log(nameBestScore)
+
+  }
+  ,1000
+)
+
+}
