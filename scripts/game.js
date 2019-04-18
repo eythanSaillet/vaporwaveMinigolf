@@ -409,6 +409,13 @@ window.addEventListener('keydown', (e) => {
     }
   )
 
+  window.addEventListener('keydown', (e) => {
+        if(e.code == "Space"){
+          play()
+        }
+      }
+    )
+
 mapVisual.forEach(function(e){
   e.addEventListener('click', play)
 })
@@ -641,7 +648,7 @@ function blowUp(){
 
     // ball
 
-    if(level == 3){
+    if(level == 5){
       console.log("level3")
     }
 
@@ -685,12 +692,10 @@ function nextLevel(){
   ,300)
   }
   if(level == totalLevel+1){
-    // Refresh des score dans tabRank
 
-    for (var i = 0; i < tabRank.length; i++) {
-      tabRank[i][1] = score[i]
-      console.log(tabRank)
-    }
+    // Tri des scores
+
+
 
     setTimeout(function(){
       gameOverlay.style.display = "none"
@@ -706,10 +711,7 @@ function nextLevel(){
 
 function tabRankCreation(){
   for (var i = 0; i < playerNumber; i++) {
-    let tempTab = []
-    tabRank.push(tempTab)
-    tempTab.push(playerTab[i])
-    tempTab.push(score[i])
+    
   }
 }
 
