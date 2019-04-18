@@ -657,8 +657,14 @@ FINAL SCORE
   display: block;
 }
 
-.level2 .game_brick{
-  
+.level1 .game_brick{
+  position: absolute;
+  background-color: #0ff;
+  left: 120px;
+  bottom: 270px;
+  height: 60px;
+  width: 60px;
+  box-shadow: 0px 0px 20px 2px #0ff;
 }
 
 
