@@ -455,7 +455,8 @@ color: rgb(202,101,245)
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  background-color: black;
+  z-index: 2;
 }
 .section_gamePlay_winner_historical_option_songOff{
   width: 50%;
@@ -464,7 +465,7 @@ color: rgb(202,101,245)
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 1;
 }
 
 .section_gamePlay_winner_historical_option_restart{
@@ -511,8 +512,26 @@ FINAL SCORE
   margin: auto;
 }
 
+.section_gamePlay_Score_logo{
+  width:600px;
+  height: 60px;
+  margin: auto;
+  padding: 10px;
+  padding-top: 20px
+}
+
+.section_gamePlay_Score_logo img{
+  width: auto;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .section_gamePlay_finalScore{
-  margin-top: 100px;
+  margin-top: 20px;
   width:600px;
   height: 400px;
   display: flex;
