@@ -675,13 +675,23 @@ FINAL SCORE
   display: block;
 }
 
+.level1 .game_brick{
+  position: absolute;
+  background-color: #0ff;
+  left: 120px;
+  bottom: 270px;
+  height: 60px;
+  width: 60px;
+  box-shadow: 0px 0px 20px 2px #0ff;
+}
+
 /* LEVEL 2 */
 
 .level2{
   display: none;
 }
 
-.game_brick{
+.level2 .game_brick{
   position: absolute;
   background-color: #0ff;
   left: 110px;
@@ -691,7 +701,7 @@ FINAL SCORE
   box-shadow: 0px 0px 20px 2px #0ff;
 }
 
-.game_brick2{
+.level2 .game_brick2{
   position: absolute;
   background-color: #0ff;
   left: 170px;
@@ -700,3 +710,57 @@ FINAL SCORE
   width: 60px;
   box-shadow: 0px 0px 20px 2px #0ff;
 }
+
+/* LEVEL 3 */
+
+.level3{
+  display:none;
+}
+
+.level3 .game_trap{
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  top: 240px;
+  left: 140px;
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: 0px 0px 40px 5px red;
+  transition: all 250ms linear;
+}
+
+.level3 .game_trap2{
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    top: 380px;
+    left: 35px;
+    position: absolute;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 5px red;
+    transition: all 250ms linear;
+}
+
+.level3 .game_trap3{
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    top: 180px;
+    left: 55px;
+    position: absolute;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 5px red;
+    transition: all 250ms linear;
+}
+
+.level3 .game_trap4{
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    top: 286px;
+    left: 229px;
+    position: absolute;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px 5px red;
+    transition: all 250ms linear;
+  }
