@@ -384,3 +384,17 @@ function nextLevel(){
   ,300)
   }
 }
+
+// Ranking Process
+
+function sortRanking(a,b){
+  if (a<b) return -1
+  else if (a>b) return 1
+  else return 0
+}
+
+let newOrder = score.slice(0).sort(sortRanking)
+
+for(let i = 0; i < newOrder.length; i++){
+	console.log(score.indexOf(newOrder[i]))
+}
