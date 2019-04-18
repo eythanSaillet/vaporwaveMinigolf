@@ -161,15 +161,15 @@ NUMBER OF PLAYER
 }
 
 .playerFour:hover{
-  text-shadow: ##9400D3 0 -3px;
+  text-shadow: #9400D3 0 -3px;
 }
 
 .playerFive:hover{
-  text-shadow: ##FFFFFF 0 -3px;
+  text-shadow: #FFFFFF 0 -3px;
 }
 
 .playerSix:hover{
-  text-shadow: ##FFA500 0 -3px;
+  text-shadow: #FFA500 0 -3px;
 }
 
 .section_numberPlayer{
