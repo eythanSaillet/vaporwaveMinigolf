@@ -15,6 +15,20 @@ let gamePlayOptionResart = document.querySelector(".section_gamePlay_winner_hist
 let gamefinalScoreButton = document.querySelector(".section_gamePlay_finalScore_score_rejouer")
 
 
+
+
+
+//TRUC A COLLER DANS LE FICHIER GAME
+let scorePlayerRank1 = document.querySelector(".Score_player_rank1")
+let scorePlayerRank2 = document.querySelector(".Score_player_rank2")
+let scorePlayerRank3 = document.querySelector(".Score_player_rank3")
+let scorePlayerRank4 = document.querySelector(".Score_player_rank4")
+let scorePlayerRank5 = document.querySelector(".Score_player_rank5")
+let scorePlayerRank6 = document.querySelector(".Score_player_rank6")
+
+
+
+//REFRESH PAGE
 gamePlayOptionResart.addEventListener(
   "click",
   function(){
@@ -29,7 +43,7 @@ gamefinalScoreButton.addEventListener(
   }
 )
 
-
+//BOUTON MUSIC
 gamePlayOptionSongOn.addEventListener(
   "click",
   function(){
@@ -64,6 +78,7 @@ pageGamePlayScoreButton.addEventListener(
   function(){
     pageGamePlay.style.display="none"
     pageGamePlayScore.style.visibility="visible"
+
   }
 )
 
@@ -83,7 +98,7 @@ playerSelector.forEach(
       function(){
         numberPlayerMenu.style.display="none"
         pageGamePlay.style.visibility="visible"
-
+        music.play();
       }
     )
   }

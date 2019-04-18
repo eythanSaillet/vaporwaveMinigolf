@@ -87,6 +87,25 @@ let levelA = {
     }
   },
 
+  brick : function(){
+    if(ball.posX >= 130 && ball.posX <= 170 && ball.posY>=270 && ball.posY<=280){
+      ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >= 130 && ball.posX <= 170 && ball.posY>=320 && ball.posY<=330){
+      ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >= 120 && ball.posX <= 130 && ball.posY>=270 && ball.posY<=330){
+      ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+    if(ball.posX >= 170 && ball.posX <= 180 && ball.posY>=270 && ball.posY<=330){
+      ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+  },
+
 
 }
 
@@ -117,26 +136,40 @@ let levelB = {
   },
 
   brick1 : function(){
-    if(ball.posX >= 110 && ball.posX <= 190 && ball.posY>=430 && ball.posY<=460){
+    if(ball.posX >= 120 && ball.posX <= 180 && ball.posY>=430 && ball.posY<=440){
       ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >= 120 && ball.posX <= 180 && ball.posY>=450 && ball.posY<=460){
+      ball.dirY = -ball.dirY
+      refreshBounce()
     }
     if(ball.posX >= 110 && ball.posX <= 125 && ball.posY>=430 && ball.posY<=460){
       ball.dirX = -ball.dirX
+      refreshBounce()
     }
-    if(ball.posX >= 175 && ball.posX <= 190 && ball.posY>=430 && ball.posY<=460){
+    if(ball.posX >= 180 && ball.posX <= 190 && ball.posY>=430 && ball.posY<=460){
       ball.dirX = -ball.dirX
+      refreshBounce()
     }
   },
 
   brick2 : function(){
-    if(ball.posX >= 170 && ball.posX <= 230 && ball.posY>=160 && ball.posY<=190){
+    if(ball.posX >= 180 && ball.posX <= 220 && ball.posY>=160 && ball.posY<=170){
       ball.dirY = -ball.dirY
+      refreshBounce()
     }
-    if(ball.posX >= 170 && ball.posX <= 185 && ball.posY>=160 && ball.posY<=190){
-      ball.dirX = -ball.dirX
+    if(ball.posX >= 180 && ball.posX <= 220 && ball.posY>=180 && ball.posY<=190){
+      ball.dirY = -ball.dirY
+      refreshBounce()
     }
-    if(ball.posX >= 215 && ball.posX <= 230 && ball.posY>=160 && ball.posY<=190){
+    if(ball.posX >= 170 && ball.posX <= 180 && ball.posY>=160 && ball.posY<=190){
       ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+    if(ball.posX >= 220 && ball.posX <= 230 && ball.posY>=160 && ball.posY<=190){
+      ball.dirX = -ball.dirX
+      refreshBounce()
     }
   }
 
@@ -385,6 +418,10 @@ function play(){
 
         // Collision brick & autres
 
+        if (level == 1) {
+          levelA.brick()
+        }
+
         if (level == 2) {
           levelB.brick1()
           levelB.brick2()
@@ -556,6 +593,7 @@ function nextLevel(){
   }
 }
 
+
 // Ranking Process
 
 function sortRanking(a,b){
@@ -568,4 +606,10 @@ let newOrder = score.slice(0).sort(sortRanking)
 
 for(let i = 0; i < newOrder.length; i++){
 	console.log(score.indexOf(newOrder[i]))
+}
+
+// Fonction affichage classement
+
+if(level == totalLevel){
+
 }
