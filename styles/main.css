@@ -1,3 +1,4 @@
+
 body{
   padding: 0;
   font-family: 'VCR OSD Mono';
@@ -91,19 +92,15 @@ a:hover{
 
 .text p{
   color: orange;
-}
-
-.playButton{
-  flex-direction: column;
-  font-family: 'SF Alien encounters';
-  color: #01CDFE;
+  margin-top: 50px;
+  margin-bottom: 90px;
 }
 
 /* Screenshots of the game */
 
 .screenshots{
   flex-direction: row;
-  margin-top: 90px;
+  margin-top: 100px;
   justify-content: space-around;
 }
 
@@ -112,6 +109,7 @@ a:hover{
   height: 400px;
   background-color: white;
   justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 .learnMore p{
@@ -124,15 +122,14 @@ a:hover{
   width: 200px;
   height: 72px;
   margin: auto;
+  margin-top: 60px;
   border-style :solid;
   border-color: white;
   margin-bottom: 20px;
-
-
-
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items:center;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .bigButton a{
@@ -148,7 +145,7 @@ a:hover{
 
 .bigButton a:hover{
   text-shadow: #01CDFE 0 -3px;
-}  
+}
 
 /* Footer*/
 
