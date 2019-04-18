@@ -823,32 +823,12 @@ FINAL SCORE
   box-shadow: 0px 0px 20px 2px #0ff;
 }
 
-.level4 .game_Brick3{
-  position: absolute;
-  background-color: #0ff;
-  bottom: 380px;
-  left: 210px;
-  height: 50px;
-  width: 30px;
-  box-shadow: 0px 0px 20px 2px #0ff;
-}
-
-.level4 .game_Brick4{
-  position: absolute;
-  background-color: #0ff;
-  bottom: 500px;
-  left: 180px;
-  height: 50px;
-  width: 40px;
-  box-shadow: 0px 0px 20px 2px #0ff;
-}
-
 .level4 .game_Brick5{
   position: absolute;
   background-color: #0ff;
-  bottom: 485px;
+  bottom: 455px;
   left: 90px;
-  height: 30px;
+  height: 60px;
   width: 130px;
   box-shadow: 0px 0px 20px 2px #0ff;
 }

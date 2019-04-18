@@ -272,6 +272,63 @@ let levelD = {
     }
   },
 
+  brick1 : function(){
+    if(ball.posX >= 220 && ball.posX <= 250 && ball.posY>=150 && ball.posY<=160){
+      ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >= 220 && ball.posX <= 250 && ball.posY>=190 && ball.posY<=200){
+      ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >= 220 && ball.posX <= 230 && ball.posY>=150 && ball.posY<=200){
+      ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+    if(ball.posX >= 240 && ball.posX <= 250 && ball.posY>=150 && ball.posY<=200){
+      ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+  },
+
+  brick2 : function(){
+    if(ball.posX >= 75 && ball.posX <= 85 && ball.posY>=300 && ball.posY<=310){
+      ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >= 75 && ball.posX <= 85 && ball.posY>=340 && ball.posY<=350){
+      ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >= 65 && ball.posX <= 75 && ball.posY>=300 && ball.posY<=350){
+      ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+    if(ball.posX >= 85 && ball.posX <= 95 && ball.posY>=300 && ball.posY<=350){
+      ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+  },
+
+  brick4 : function(){
+    if(ball.posX >= 90 && ball.posX <= 220 && ball.posY>=455 && ball.posY<=465){
+      ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >=90  && ball.posX <= 220 && ball.posY>=505 && ball.posY<=515){
+      ball.dirY = -ball.dirY
+      refreshBounce()
+    }
+    if(ball.posX >= 90 && ball.posX <= 100 && ball.posY>=455 && ball.posY<=515){
+      ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+    if(ball.posX >= 210 && ball.posX <= 220 && ball.posY>=455 && ball.posY<=515){
+      ball.dirX = -ball.dirX
+      refreshBounce()
+    }
+  },
+
 }
 
 let bounce = 0
@@ -579,6 +636,11 @@ function play(){
           levelB.brick1()
           levelB.brick2()
         }
+        if (level == 4) {
+          levelD.brick1()
+          levelD.brick2()
+          levelD.brick4()
+        }
 
       }
       ,ball.timer)
@@ -595,24 +657,24 @@ let toRadian = function (deg) {
     return deg / 180 * Math.PI;
 }
 
-// Curseur choix angle de lancement
+// Curseur choix angle de lancement (clavier)
 
-window.addEventListener('keydown', (e) => {
-  if(e.code == "ArrowLeft" && playProcess == false){
-    cursorAngle = cursorAngle-5
-    cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
-    ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
-    ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
-    console.log(cursorAngle)
-  }
-  if(e.code == "ArrowRight" && playProcess == false){
-    cursorAngle = cursorAngle+5
-    cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
-    ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
-    ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
-    console.log(cursorAngle)
-  }
-})
+// window.addEventListener('keydown', (e) => {
+//   if(e.code == "ArrowLeft" && playProcess == false){
+//     cursorAngle = cursorAngle-5
+//     cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
+//     ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
+//     ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
+//     console.log(cursorAngle)
+//   }
+//   if(e.code == "ArrowRight" && playProcess == false){
+//     cursorAngle = cursorAngle+5
+//     cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
+//     ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
+//     ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
+//     console.log(cursorAngle)
+//   }
+// })
 
 // Fonction reset ball
 
