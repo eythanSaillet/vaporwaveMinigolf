@@ -11,7 +11,7 @@ if(score>bestScore)
         name=parseInt(window.prompt('Entrer votre nom en 3 caractères'))
     }while(name.length>4)
 
-    name.toUpperCase()
+    name=name.toUpperCase()
     bestScore=score
     score=0
 }
