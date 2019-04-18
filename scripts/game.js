@@ -610,6 +610,6 @@ for(let i = 0; i < newOrder.length; i++){
 
 // Fonction affichage classement
 
-if(level == totalLevel){
-
+if(level == totalLevel+1){
+  console.log("affichage scoreboard")
 }
