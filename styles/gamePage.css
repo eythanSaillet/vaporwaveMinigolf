@@ -93,9 +93,13 @@ SECTION NUMBER OF PLAYER
   width: 100%;
 }
 
+.section_numberPlayer_header_intruction_inE {
+  width: 20%;
+  height: 80%;
+}
 
 .section_numberPlayer_header_intruction_in {
-  width: 50%;
+  width: 40%;
   height: 80%;
 }
 
@@ -426,15 +430,23 @@ color: rgb(202,101,245)
 }
 
 
-.section_gamePlay_winner_historical_BS_Icon_2{
+.section_gamePlay_winner_historical_BS_Icon_2 {
   width: 40%;
   height: 100%;
 }
+
 .section_gamePlay_winner_historical_BS_Icon_1 p{
   text-align: center;
   color : white;
   margin-top: 20%;
   margin-bottom: 20%;
+}
+
+.section_gamePlay_winner_historical_BS_Icon_2 p{
+  text-align: center;
+  color : white;
+  margin-top: 30%;
+  margin-bottom: 30%;
 }
 
 .section_gamePlay_winner_historical_option{
