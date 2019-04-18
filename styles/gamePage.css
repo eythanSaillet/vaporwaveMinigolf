@@ -93,9 +93,12 @@ SECTION NUMBER OF PLAYER
   width: 100%;
 }
 
-
+.section_numberPlayer_header_intruction_inE {
+  width: 20%;
+  height: 80%;
+}
 .section_numberPlayer_header_intruction_in {
-  width: 50%;
+  width: 40%;
   height: 80%;
 }
 
@@ -106,6 +109,8 @@ SECTION NUMBER OF PLAYER
 
 .section_numberPlayer_header_intruction_in h1{
   margin: auto;
+  margin-left: 10px;
+  margin-right: 10px;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -312,6 +317,7 @@ color: rgb(202,101,245)
   width: 200px;
   height: 50px;
   margin: auto;
+  margin-bottom: 0px;
   border-width : 1px;
   border-style :solid;
   border-color: white;
@@ -343,6 +349,7 @@ color: rgb(202,101,245)
   border-width : 1px;
   border-style :solid;
   border-color: white;
+  margin-bottom: 0px;
 }
 
 .section_gamePlay_winner_historical h1{
@@ -367,6 +374,8 @@ color: rgb(202,101,245)
   border-width : 1px;
   border-style :solid;
   border-color: #3edffe;
+  margin-bottom: 0px;
+
 }
 
 .section_gamePlay_winner_historical_imgGame{
@@ -393,6 +402,7 @@ color: rgb(202,101,245)
   display:flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0px;
 }
 
 .section_gamePlay_winner_historical_BestScore{
@@ -414,22 +424,29 @@ color: rgb(202,101,245)
   color : white;
 }
 
+/*
 .section_gamePlay_winner_historical_BS_Icon_2 img{
   width: auto;
   height: 60%;
   margin: 12%;
 }
 
-.section_gamePlay_winner_historical_BS_Icon_1{
-  width: 60%;
-  height: 100%;
-}
-
-
 .section_gamePlay_winner_historical_BS_Icon_2{
   width: 40%;
   height: 100%;
 }
+
+<img src="images/palmier.png" alt="">
+*/
+
+.section_gamePlay_winner_historical_BS_Icon_1{
+  width: 50%;
+  height: 100%;
+}
+
+
+
+
 .section_gamePlay_winner_historical_BS_Icon_1 p{
   text-align: center;
   color : white;
