@@ -682,13 +682,12 @@ function nextLevel(){
   ,300)
   }
   if(level == totalLevel+1){
-    // let newOrder = score.slice(0).sort(sortRanking)
-    // console.log(newOrder)
-
     // Refresh des score dans tabRank
 
     for (var i = 0; i < tabRank.length; i++) {
       tabRank[i][1] = score[i]
+      tabRank[1].sort(fonctionComparaison)
+      console.log(tabRank)
     }
 
     setTimeout(function(){
