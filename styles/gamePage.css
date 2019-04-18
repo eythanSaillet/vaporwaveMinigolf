@@ -149,15 +149,15 @@ SECTION NUMBER OF PLAYER
 NUMBER OF PLAYER
 */
 .playerOne:hover{
-  text-shadow: #FF0000 0 -3px;
+  text-shadow: #FF1493 0 -3px;
 }
 
 .playerTwo:hover{
-  text-shadow: #00D7EE 0 -3px;
+  text-shadow: #00FF00 0 -3px;
 }
 
 .playerThree:hover{
-  text-shadow: #FF1493 0 -3px;
+  text-shadow: #FFFF00 0 -3px;
 }
 
 .playerFour:hover{
