@@ -4,11 +4,13 @@
 	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
-	.st1{fill:#F70FCE;stroke:#3EDFFE;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:#D5158F;stroke:#3EDFFE;stroke-width:10;stroke-miterlimit:10;}
 	.st2{fill:none;stroke:#3EDFFE;stroke-width:12;stroke-miterlimit:10;}
 </style>
 <path class="st0" d="M325.72,137.09"/>
-<polygon class="st1" points="129,108.71 129,250.7 247.9,250.7 247.9,421.56 344,421.56 344,44.94 129,44.94 "/>
+<path class="st1" d="M129,108.71v132.47c0,5.25,4.26,9.51,9.51,9.51h99.88c5.25,0,9.51,4.26,9.51,9.51v151.84
+	c0,5.25,4.26,9.51,9.51,9.51h77.08c5.25,0,9.51-4.26,9.51-9.51V54.45c0-5.25-4.26-9.51-9.51-9.51H138.51
+	c-5.25,0-9.51,4.26-9.51,9.51V108.71z"/>
 <polyline class="st2" points="194.82,189.01 300.12,189.01 300.12,153.9 272.33,153.9 "/>
 <polygon class="st2" points="176.78,189.01 200.67,207.16 200.67,170.85 "/>
 </svg>

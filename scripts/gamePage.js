@@ -28,7 +28,6 @@ let scorePlayerRank6 = document.querySelector(".Score_player_rank6")
 
 
 
-
 //REFRESH PAGE
 gamePlayOptionResart.addEventListener(
   "click",
