@@ -455,7 +455,7 @@ color: rgb(202,101,245)
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 1;
 }
 .section_gamePlay_winner_historical_option_songOff{
   width: 50%;
@@ -464,7 +464,7 @@ color: rgb(202,101,245)
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
 }
 
 .section_gamePlay_winner_historical_option_restart{
@@ -488,7 +488,7 @@ color: rgb(202,101,245)
   width: auto;
   height: 100%;
   position: absolute;
-  background-color: black;
+
 }
 
 .section_gamePlay_winner_historical_option_songOff img{
@@ -587,7 +587,9 @@ FINAL SCORE
   text-shadow: #01CDFE 0 -3px;
 }
 
-
+.Score_players_1{
+  display:
+}
 
 
 /*main position absolute O par apport au main*/
@@ -655,23 +657,13 @@ FINAL SCORE
   display: block;
 }
 
-.level1 .game_brick{
-  position: absolute;
-  background-color: #0ff;
-  left: 120px;
-  bottom: 270px;
-  height: 60px;
-  width: 60px;
-  box-shadow: 0px 0px 20px 2px #0ff;
-}
-
 /* LEVEL 2 */
 
 .level2{
   display: none;
 }
 
-.level2 .game_brick{
+.game_brick{
   position: absolute;
   background-color: #0ff;
   left: 110px;
@@ -681,7 +673,7 @@ FINAL SCORE
   box-shadow: 0px 0px 20px 2px #0ff;
 }
 
-.level2 .game_brick2{
+.game_brick2{
   position: absolute;
   background-color: #0ff;
   left: 170px;
