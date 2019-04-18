@@ -1,6 +1,7 @@
 const mapVisual = document.querySelectorAll(".game_map")
 const mapVisualA = document.querySelector(".level1")
 const mapVisualB = document.querySelector(".level2")
+const mapVisualC = document.querySelector(".level3")
 
 // Selection des p --> board d'informations
 const pScore1 = document.querySelector("div.color1 p")
@@ -37,10 +38,11 @@ const launchSound = new Audio ('sounds/golfhitball.mp3')
 const selectionSound = new Audio ('sounds/selection-sound.mp3')
 
 
-const barrierVisual = document.querySelector(".game_barrier")
+let redShining = document.querySelectorAll(".redShining")
 
 let level1 = document.querySelector(".level1")
 let level2 = document.querySelector(".level2")
+let level3 = document.querySelector(".level3")
 
 let onePlayer = document.querySelector(".playerOne")
 let twoPlayer = document.querySelector(".playerTwo")
@@ -182,7 +184,7 @@ let cursorAngle = 0
 // Info level
 
 let level = 1
-let totalLevel = 2
+let totalLevel = 3
 
 // Variables infos joueurs
 
@@ -349,16 +351,30 @@ mapVisual.forEach(function(e){
 
 // Clignotement barrière rouge
 
-setInterval(function(){
-  barrierVisual.style.boxShadow = "0px 0px 40px 0px red"
-  setTimeout(function(){
-    barrierVisual.style.boxShadow = "0px 0px 40px 10px red"
+redShining.forEach(function(e){
+  setInterval(function(){
+    e.style.boxShadow = "0px 0px 40px 0px red"
+    setTimeout(function(){
+      e.style.boxShadow = "0px 0px 40px 10px red"
+    }
+    ,250
+  )
   }
-  ,250
-)
-}
-,500
-)
+  ,500
+  )
+})
+
+
+// setInterval(function(){
+//   barrierVisual.style.boxShadow = "0px 0px 40px 0px red"
+//   setTimeout(function(){
+//     barrierVisual.style.boxShadow = "0px 0px 40px 10px red"
+//   }
+//   ,250
+// )
+// }
+// ,500
+// )
 
 // Fonction PLAY + test WIN, Blow UP, bounce
 
@@ -587,6 +603,20 @@ function nextLevel(){
       level2.style.display = "block"
       mapVisualA.removeChild(ballVisual)
       mapVisualB.appendChild(ballVisual)
+      refreshLevel()
+    }
+  ,300)
+  }
+  if (level == 3) {
+    setTimeout(function(){
+      level2.style.display = "none"
+      level3.style.display = "block"
+      console.log(mapVisualB)
+      console.log(mapVisualC)
+      mapVisualB.removeChild(ballVisual)
+      mapVisualC.appendChild(ballVisual)
+      console.log(mapVisualB)
+      console.log(mapVisualC)
       refreshLevel()
     }
   ,300)
