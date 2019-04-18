@@ -13,6 +13,12 @@ const pScore6 = document.querySelector("div.color6 p")
 const pBounce = document.querySelector(".pBounce")
 const pLevel = document.querySelector(".pLevel")
 
+// Sounds
+
+const bounceSound = new Audio ('sounds/bounce.mp3')
+const launchSound = new Audio ('sounds/golfhitball.mp3')
+const selectionSound = new Audio ('sounds/selection-sound.mp3')
+
 
 const barrierVisual = document.querySelector(".game_barrier")
 
@@ -164,6 +170,7 @@ sixPlayer.addEventListener('click', function(){
 })
 
 function playerTabCreation(){
+  selectionSound.play()
   for (var i = 0; i < playerNumber; i++) {
     let tempI = i+1
     playerTab.push("player"+tempI)
@@ -186,6 +193,7 @@ function refreshScore(){
 // Fonction refresh bounce
 
 function refreshBounce(){
+  bounceSound.play()
   bounce +=1
   pBounce.innerHTML = bounce
 }
@@ -233,6 +241,7 @@ setInterval(function(){
 
 function play(){
   if (playProcess == false) {
+    launchSound.play()
     move = setInterval(
       function(){
 
