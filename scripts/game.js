@@ -177,6 +177,60 @@ let levelB = {
 
 }
 
+let levelC = {
+
+  win : function(){
+
+    if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
+      console.log("win")
+      window.clearInterval(move)
+      win()
+      setTimeout(
+        function(){
+          ballVisual.style.display = "none"
+        }
+        ,50
+      )
+    }
+  },
+
+  // blowUp : function(){
+  //   if (ball.posY<=0) {
+  //     window.clearInterval(move)
+  //     blowUp()
+  //   }
+  // },
+
+  trap1 : function(){
+    if(ball.posX >= 140 && ball.posX <= 160 && ball.posY>=340 && ball.posY<=360){
+      window.clearInterval(move)
+      blowUp()
+    }
+  },
+
+  trap2 : function(){
+    if(ball.posX >= 35 && ball.posX <= 55 && ball.posY>=200 && ball.posY<=220){
+      window.clearInterval(move)
+      blowUp()
+    }
+  },
+
+  trap3 : function(){
+    if(ball.posX >= 55 && ball.posX <= 75 && ball.posY>=400 && ball.posY<=420){
+      window.clearInterval(move)
+      blowUp()
+    }
+  },
+
+  trap4 : function(){
+    if(ball.posX >= 260 && ball.posX <= 280 && ball.posY>=290 && ball.posY<=310){
+      window.clearInterval(move)
+      blowUp()
+    }
+  },
+
+}
+
 let bounce = 0
 let playProcess = false
 let cursorAngle = 0
@@ -349,7 +403,7 @@ mapVisual.forEach(function(e){
 })
 
 
-// Clignotement barrière rouge
+// Clignotement item rouge
 
 redShining.forEach(function(e){
   setInterval(function(){
@@ -363,18 +417,6 @@ redShining.forEach(function(e){
   ,500
   )
 })
-
-
-// setInterval(function(){
-//   barrierVisual.style.boxShadow = "0px 0px 40px 0px red"
-//   setTimeout(function(){
-//     barrierVisual.style.boxShadow = "0px 0px 40px 10px red"
-//   }
-//   ,250
-// )
-// }
-// ,500
-// )
 
 // Fonction PLAY + test WIN, Blow UP, bounce
 
@@ -418,8 +460,10 @@ function play(){
         if(level == 1){
           levelA.win()
         }
-
         if(level == 2 && playProcess == true){
+          levelB.win()
+        }
+        if(level == 3 && playProcess == true){
           levelB.win()
         }
 
@@ -431,13 +475,18 @@ function play(){
         if(level == 2){
           levelB.blowUp()
         }
+        if(level == 3){
+          levelC.trap1()
+          levelC.trap2()
+          levelC.trap3()
+          levelC.trap4()
+        }
 
         // Collision brick & autres
 
         if (level == 1) {
           levelA.brick()
         }
-
         if (level == 2) {
           levelB.brick1()
           levelB.brick2()
@@ -564,6 +613,7 @@ function blowUp(){
   setTimeout(function(){
 
     playProcess = false
+    //bounce +=1
 
     // ball
 
