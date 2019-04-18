@@ -529,8 +529,26 @@ FINAL SCORE
   margin: auto;
 }
 
+.section_gamePlay_Score_logo{
+  width:600px;
+  height: 60px;
+  margin: auto;
+  padding: 10px;
+  padding-top: 20px
+}
+
+.section_gamePlay_Score_logo img{
+  width: auto;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .section_gamePlay_finalScore{
-  margin-top: 100px;
+  margin-top: 20px;
   width:600px;
   height: 400px;
   display: flex;
