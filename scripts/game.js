@@ -13,7 +13,12 @@ const pScore6 = document.querySelector("div.color6 p")
 
 const pBounce = document.querySelector(".pBounce")
 const pLevel = document.querySelector(".pLevel")
-const hPlayer = document.querySelector(".section_gamePlay_winnerName h1")
+const hPlayer = document.querySelector(".section_gamePlay_winnerName h2")
+
+// Scoreboard FINAL
+
+const finalOverlay = document.querySelector(".section_gamePlay_Score")
+const gameOverlay = document.querySelector(".section_gamePlay")
 
 // Selection du scoreboard div + h1
 
@@ -24,12 +29,12 @@ const divScore4 = document.querySelector("div.color4")
 const divScore5 = document.querySelector("div.color5")
 const divScore6 = document.querySelector("div.color6")
 
-const hScore1 = document.querySelector("div.color1 h1")
-const hScore2 = document.querySelector("div.color2 h1")
-const hScore3 = document.querySelector("div.color3 h1")
-const hScore4 = document.querySelector("div.color4 h1")
-const hScore5 = document.querySelector("div.color5 h1")
-const hScore6 = document.querySelector("div.color6 h1")
+const hScore1 = document.querySelector("div.color1 h2")
+const hScore2 = document.querySelector("div.color2 h2")
+const hScore3 = document.querySelector("div.color3 h2")
+const hScore4 = document.querySelector("div.color4 h2")
+const hScore5 = document.querySelector("div.color5 h2")
+const hScore6 = document.querySelector("div.color6 h2")
 
 // Sounds
 
@@ -38,7 +43,7 @@ const launchSound = new Audio ('sounds/golfhitball.mp3')
 const selectionSound = new Audio ('sounds/selection-sound.mp3')
 const blowUpSound = new Audio ('sounds/explosion.mp3')
 const holeSound = new Audio ('sounds/hole-sound.mp3')
-
+const levelSound = new Audio ('sounds/level-end.mp3')
 
 let redShining = document.querySelectorAll(".redShining")
 
@@ -246,6 +251,7 @@ let totalLevel = 3
 
 let score = [0,0,0,0,0,0]
 let playerColor = ["","#FF1493","#00FF00","#FFFF00","#9400D3","#FFFFFF","#FFA500"]
+let tabRank = new Array()
 
 // Variables nombre de Joueurs
 
@@ -348,6 +354,8 @@ function playerTabCreation(){
     playerTab.push("player"+tempI)
   }
   console.log(playerTab)
+  tabRankCreation()
+  console.log(tabRank)
 }
 
 // Fonction refresh scores
@@ -453,7 +461,6 @@ function play(){
 
           cursorVisual.style.display = "none"
 
-          console.log(ball.posX,ball.posY)
 
         })
 
@@ -651,6 +658,8 @@ function blowUp(){
 
 function nextLevel(){
 
+  levelSound.play()
+
   console.log(currentlyPlayerNumber)
   if (level == 2) {
     setTimeout(function(){
@@ -666,35 +675,39 @@ function nextLevel(){
     setTimeout(function(){
       level2.style.display = "none"
       level3.style.display = "block"
-      console.log(mapVisualB)
-      console.log(mapVisualC)
       mapVisualB.removeChild(ballVisual)
       mapVisualC.appendChild(ballVisual)
-      console.log(mapVisualB)
-      console.log(mapVisualC)
       refreshLevel()
+    }
+  ,300)
+  }
+  if(level == totalLevel+1){
+    // let newOrder = score.slice(0).sort(sortRanking)
+    // console.log(newOrder)
+
+    // Refresh des score dans tabRank
+
+    for (var i = 0; i < tabRank.length; i++) {
+      tabRank[i][1] = score[i]
+    }
+
+    setTimeout(function(){
+      gameOverlay.style.display = "none"
+      finalOverlay.style.visibility = "visible"
     }
   ,300)
   }
 }
 
 
-// Ranking Process
-
-function sortRanking(a,b){
-  if (a<b) return -1
-  else if (a>b) return 1
-  else return 0
-}
-
-let newOrder = score.slice(0).sort(sortRanking)
-
-for(let i = 0; i < newOrder.length; i++){
-	console.log(score.indexOf(newOrder[i]))
-}
-
 // Fonction affichage classement
 
-if(level == totalLevel+1){
-  console.log("affichage scoreboard")
+
+function tabRankCreation(){
+  for (var i = 0; i < playerNumber; i++) {
+    let tempTab = []
+    tabRank.push(tempTab)
+    tempTab.push(playerTab[i])
+    tempTab.push(score[i])
+  }
 }
