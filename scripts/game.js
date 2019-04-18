@@ -241,6 +241,7 @@ let levelC = {
 let bounce = 0
 let playProcess = false
 let cursorAngle = 0
+let cursorDir = true
 
 // Info level
 
@@ -524,12 +525,14 @@ window.addEventListener('keydown', (e) => {
     cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
     ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
     ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
+    console.log(cursorAngle)
   }
   if(e.code == "ArrowRight" && playProcess == false){
     cursorAngle = cursorAngle+5
     cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
     ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
     ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
+    console.log(cursorAngle)
   }
 })
 
@@ -686,7 +689,6 @@ function nextLevel(){
 
     for (var i = 0; i < tabRank.length; i++) {
       tabRank[i][1] = score[i]
-      tabRank[1].sort(fonctionComparaison)
       console.log(tabRank)
     }
 
@@ -710,3 +712,27 @@ function tabRankCreation(){
     tempTab.push(score[i])
   }
 }
+
+setInterval(
+  function(){
+    if(cursorDir == true && playProcess == false){
+      cursorAngle +=5
+      cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
+      ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
+      ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
+      if(cursorAngle >= 85){
+        cursorDir = false
+      }
+    }
+    if(cursorDir == false && playProcess == false){
+      cursorAngle -=5
+      cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
+      ball.dirX=Math.round(Math.sin(toRadian(cursorAngle))*ball.step)
+      ball.dirY=Math.round(Math.cos(toRadian(cursorAngle))*ball.step)
+      if(cursorAngle <= -85){
+        cursorDir = true
+      }
+    }
+  }
+  ,50
+)
