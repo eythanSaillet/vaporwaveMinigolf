@@ -364,6 +364,22 @@ if(bestScore == null){
   bestScore = 999;
 }
 
+
+// Best score maj interface
+
+const bestScoreNameView = document.querySelector(".section_gamePlay_winner_historical_BS_Icon_1 p")
+const bestSoreScoreView = document.querySelector(".section_gamePlay_winner_historical_BS_Icon_2 p")
+
+function bestScoreView(){
+  if(nameBestScore != null){
+    bestScoreNameView.innerHTML = localStorage.getItem('nameBestScore')
+  }
+  if(bestScore != 999){
+    bestSoreScoreView.innerHTML = localStorage.getItem('bestScore')
+  }
+}
+bestScoreView()
+
 // Création de la ball et du Curseur
 
 const ballVisual = document.createElement("div")
@@ -504,8 +520,9 @@ function refreshBounce(){
 // Fonction refresh level info
 
 function refreshLevel(){
-  pLevel.innerHTML = level
+  pLevel.innerHTML = level + "/" + totalLevel
 }
+refreshLevel()
 
 // Fonction refresh joueur actuel
 
