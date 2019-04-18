@@ -27,7 +27,7 @@ main{
 .container{
   width:940px;
   margin:0 auto;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 
 .container_flex{
@@ -37,7 +37,24 @@ main{
   align-items:center;
 }
 
+.container1{
+  width:100%;
+  margin: auto;
+  height: 50px;
+  margin-bottom: 20px;
+}
 
+.container1 h1{
+  margin: auto;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'SF Alien Encounters';
+  color : white;
+  font-size:20px;
+  width: 400px;
+  height:100%;
+}
 /*
 SECTION NUMBER OF PLAYER
 */
@@ -157,7 +174,7 @@ NUMBER OF PLAYER
 
 .section_numberPlayer{
   visibility: hidden;
-  padding-top:5%;
+  padding-top:2%;
   height: 800px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8)
@@ -171,6 +188,8 @@ NUMBER OF PLAYER
   border-style :solid;
   border-color: white;
 }
+
+
 
 .section_numberPlayer_player img{
   margin: 5px;
