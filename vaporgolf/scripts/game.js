@@ -12,6 +12,23 @@ const pScore6 = document.querySelector("div.color6 p")
 
 const pBounce = document.querySelector(".pBounce")
 const pLevel = document.querySelector(".pLevel")
+const hPlayer = document.querySelector(".section_gamePlay_winnerName h1")
+
+// Selection du scoreboard div + h1
+
+const divScore1 = document.querySelector("div.color1")
+const divScore2 = document.querySelector("div.color2")
+const divScore3 = document.querySelector("div.color3")
+const divScore4 = document.querySelector("div.color4")
+const divScore5 = document.querySelector("div.color5")
+const divScore6 = document.querySelector("div.color6")
+
+const hScore1 = document.querySelector("div.color1 h1")
+const hScore2 = document.querySelector("div.color2 h1")
+const hScore3 = document.querySelector("div.color3 h1")
+const hScore4 = document.querySelector("div.color4 h1")
+const hScore5 = document.querySelector("div.color5 h1")
+const hScore6 = document.querySelector("div.color6 h1")
 
 // Sounds
 
@@ -142,26 +159,71 @@ mapVisualA.appendChild(ballVisual)
 onePlayer.addEventListener('click', function(){
   playerNumber = 1
   playerTabCreation()
+  divScore2.style.borderColor = "grey"
+  hScore2.style.color = "grey"
+  pScore2.style.color = "grey"
+  divScore3.style.borderColor = "grey"
+  hScore3.style.color = "grey"
+  pScore3.style.color = "grey"
+  divScore4.style.borderColor = "grey"
+  hScore4.style.color = "grey"
+  pScore4.style.color = "grey"
+  divScore5.style.borderColor = "grey"
+  hScore5.style.color = "grey"
+  pScore5.style.color = "grey"
+  divScore6.style.borderColor = "grey"
+  hScore6.style.color = "grey"
+  pScore6.style.color = "grey"
 })
 
 twoPlayer.addEventListener('click', function(){
   playerNumber = 2
   playerTabCreation()
+  divScore3.style.borderColor = "grey"
+  hScore3.style.color = "grey"
+  pScore3.style.color = "grey"
+  divScore4.style.borderColor = "grey"
+  hScore4.style.color = "grey"
+  pScore4.style.color = "grey"
+  divScore5.style.borderColor = "grey"
+  hScore5.style.color = "grey"
+  pScore5.style.color = "grey"
+  divScore6.style.borderColor = "grey"
+  hScore6.style.color = "grey"
+  pScore6.style.color = "grey"
 })
 
 threePlayer.addEventListener('click', function(){
   playerNumber = 3
   playerTabCreation()
+  divScore4.style.borderColor = "grey"
+  hScore4.style.color = "grey"
+  pScore4.style.color = "grey"
+  divScore5.style.borderColor = "grey"
+  hScore5.style.color = "grey"
+  pScore5.style.color = "grey"
+  divScore6.style.borderColor = "grey"
+  hScore6.style.color = "grey"
+  pScore6.style.color = "grey"
 })
 
 fourPlayer.addEventListener('click', function(){
   playerNumber = 4
   playerTabCreation()
+  divScore5.style.borderColor = "grey"
+  hScore5.style.color = "grey"
+  pScore5.style.color = "grey"
+  divScore6.style.borderColor = "grey"
+  hScore6.style.color = "grey"
+  pScore6.style.color = "grey"
 })
 
 fivePlayer.addEventListener('click', function(){
   playerNumber = 5
   playerTabCreation()
+  divScore6.style.borderColor = "grey"
+  hScore6.style.color = "grey"
+  pScore6.style.color = "grey"
 })
 
 sixPlayer.addEventListener('click', function(){
@@ -203,6 +265,15 @@ function refreshBounce(){
 function refreshLevel(){
   pLevel.innerHTML = level
 }
+
+// Fonction refresh joueur actuel
+
+function refreshPlayer(){
+  hPlayer.innerHTML = "JOUEUR " + currentlyPlayerNumber
+  hPlayer.style.color = playerColor[currentlyPlayerNumber]
+}
+
+refreshPlayer()
 
 // Position de base de la balle
 
@@ -363,6 +434,7 @@ function resetBall(){
       cursorVisual.style.transform = "rotate("+cursorAngle+"deg)"
 
       pBounce.innerHTML = 0
+      refreshPlayer()
 
     }
     ,500
@@ -391,7 +463,6 @@ function nextPlayer(){
   if(currentlyPlayerNumber>playerNumber){
     currentlyPlayerNumber -= playerNumber
     currentlyPlayer = playerTab[currentlyPlayerNumber-1]
-    console.log(currentlyPlayer)
     level +=1
     nextLevel()
   }
