@@ -96,7 +96,6 @@ let levelA = {
   win : function(){
 
     if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
-      console.log("win")
       window.clearInterval(move)
       win()
       setTimeout(
@@ -144,7 +143,6 @@ let levelB = {
   win : function(){
 
     if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
-      console.log("win")
       window.clearInterval(move)
       win()
       setTimeout(
@@ -208,7 +206,6 @@ let levelC = {
   win : function(){
 
     if(ball.posY>476 && ball.posY<503 && ball.posX>137 && ball.posX<163){
-      console.log("win")
       window.clearInterval(move)
       win()
       setTimeout(
@@ -259,7 +256,6 @@ let levelD = {
   win : function(){
 
     if(ball.posY>525 && ball.posY<545 && ball.posX>137 && ball.posX<163){
-      console.log("win")
       window.clearInterval(move)
       win()
       setTimeout(
@@ -525,9 +521,7 @@ function playerTabCreation(){
     let tempI = i+1
     playerTab.push("Joueur "+tempI)
   }
-  console.log(playerTab)
   tabRankCreation()
-  console.log(tabRank)
 }
 
 // Fonction refresh scores
@@ -753,7 +747,6 @@ function resetBall(){
       // ball level 3
 
       if(level==3){
-        console.log("level3")
       }
 
 
@@ -777,7 +770,6 @@ function resetBall(){
 
 function win(){
   holeSound.play()
-  console.log("Le joueur "+currentlyPlayerNumber+" a fait "+bounce+" rebond(s).")
   playProcess = false
 
   score[currentlyPlayerNumber-1] += bounce
@@ -817,7 +809,6 @@ function blowUp(){
   // Animation
 
   ballVisual.style.boxShadow = "0px 0px 1000px 100px" + playerColor[currentlyPlayerNumber]
-  console.log("blow")
 
   // Reset position
 
@@ -838,7 +829,6 @@ function blowUp(){
     // ball
 
     if(level == 5){
-      console.log("level3")
     }
 
       // Curseur
@@ -969,9 +959,6 @@ function bestScoreChange(){
     }
     if(playerNumber == 2){
       highScore = parseInt(hScoreboard5.innerHTML)
-      console.log(hScoreboard5.innerHTML)
-      console.log(highScore)
-      console.log(parseInt(hScoreboard5.innerHTML))
     }
     if(playerNumber == 3){
       highScore = parseInt(hScoreboard4.innerHTML)
@@ -990,7 +977,6 @@ function bestScoreChange(){
     {
         do{
             nameBestScore=window.prompt('Entrez 3 caractères pour sauvegarder votre score !')
-            console.log(nameBestScore)
         }while(nameBestScore.length != 3)
 
         nameBestScore=nameBestScore.toUpperCase()
@@ -998,10 +984,8 @@ function bestScoreChange(){
     }
 
     localStorage.setItem('bestScore', highScore)
-    console.log(bestScore)
 
     localStorage.setItem('nameBestScore' ,nameBestScore)
-    console.log(nameBestScore)
 
   }
   ,1000
