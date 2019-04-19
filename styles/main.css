@@ -136,7 +136,7 @@ a:hover{
 .bigButton a{
   font-family: 'SF Alien encounters';
   display: flex;
-  padding: 10px;
+  padding: 5px 10px 10px 10px;
   align-items: center;
   justify-content: center;
   color : white;
@@ -153,7 +153,7 @@ a:hover{
 footer{
   background-color: black;
   margin-top: 90px;
-  padding: 20px;
+  padding: 0px 20px 20px 20px;
   display: flex;
   flex-direction: column;
 }
