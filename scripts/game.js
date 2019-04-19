@@ -981,11 +981,9 @@ function bestScoreChange(){
 
         nameBestScore=nameBestScore.toUpperCase()
         bestScore=highScore
+        localStorage.setItem('bestScore', highScore)
+        localStorage.setItem('nameBestScore' ,nameBestScore)
     }
-
-    localStorage.setItem('bestScore', highScore)
-
-    localStorage.setItem('nameBestScore' ,nameBestScore)
 
   }
   ,1000
